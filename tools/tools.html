@@ -1,0 +1,2562 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://0.0.0.0:8000/tools/">
+      
+      
+        <link rel="prev" href="../Crunchyroll-subtitles/Crunchyroll-subtitles.html">
+      
+      
+        <link rel="next" href="../scripts/scripts.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Tools - Kitsune Starter Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        
+        <style type="text/css">@font-face {font-family:Roboto;font-style:normal;font-weight:300;src:url(/cf-fonts/s/roboto/5.0.11/cyrillic/300/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:300;src:url(/cf-fonts/s/roboto/5.0.11/cyrillic-ext/300/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:300;src:url(/cf-fonts/s/roboto/5.0.11/latin-ext/300/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:300;src:url(/cf-fonts/s/roboto/5.0.11/greek/300/normal.woff2);unicode-range:U+0370-03FF;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:300;src:url(/cf-fonts/s/roboto/5.0.11/greek-ext/300/normal.woff2);unicode-range:U+1F00-1FFF;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:300;src:url(/cf-fonts/s/roboto/5.0.11/latin/300/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:300;src:url(/cf-fonts/s/roboto/5.0.11/vietnamese/300/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:300;src:url(/cf-fonts/s/roboto/5.0.11/greek/300/italic.woff2);unicode-range:U+0370-03FF;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:300;src:url(/cf-fonts/s/roboto/5.0.11/greek-ext/300/italic.woff2);unicode-range:U+1F00-1FFF;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:300;src:url(/cf-fonts/s/roboto/5.0.11/vietnamese/300/italic.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:300;src:url(/cf-fonts/s/roboto/5.0.11/cyrillic-ext/300/italic.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:300;src:url(/cf-fonts/s/roboto/5.0.11/latin-ext/300/italic.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:300;src:url(/cf-fonts/s/roboto/5.0.11/cyrillic/300/italic.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:300;src:url(/cf-fonts/s/roboto/5.0.11/latin/300/italic.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/greek/400/normal.woff2);unicode-range:U+0370-03FF;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/cyrillic/400/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/latin/400/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/latin-ext/400/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/greek-ext/400/normal.woff2);unicode-range:U+1F00-1FFF;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/cyrillic-ext/400/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/vietnamese/400/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/vietnamese/400/italic.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/latin/400/italic.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/greek/400/italic.woff2);unicode-range:U+0370-03FF;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/cyrillic/400/italic.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/latin-ext/400/italic.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/cyrillic-ext/400/italic.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/greek-ext/400/italic.woff2);unicode-range:U+1F00-1FFF;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/vietnamese/700/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/cyrillic/700/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/cyrillic-ext/700/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/greek-ext/700/normal.woff2);unicode-range:U+1F00-1FFF;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/greek/700/normal.woff2);unicode-range:U+0370-03FF;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/latin/700/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/latin-ext/700/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/vietnamese/700/italic.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/latin-ext/700/italic.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/greek-ext/700/italic.woff2);unicode-range:U+1F00-1FFF;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/cyrillic/700/italic.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/cyrillic-ext/700/italic.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/greek/700/italic.woff2);unicode-range:U+0370-03FF;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/latin/700/italic.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto-mono/5.0.16/cyrillic/400/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto-mono/5.0.16/cyrillic-ext/400/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto-mono/5.0.16/latin-ext/400/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto-mono/5.0.16/vietnamese/400/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto-mono/5.0.16/greek/400/normal.woff2);unicode-range:U+0370-03FF;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto-mono/5.0.16/latin/400/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:italic;font-weight:400;src:url(/cf-fonts/s/roboto-mono/5.0.16/vietnamese/400/italic.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:italic;font-weight:400;src:url(/cf-fonts/s/roboto-mono/5.0.16/greek/400/italic.woff2);unicode-range:U+0370-03FF;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:italic;font-weight:400;src:url(/cf-fonts/s/roboto-mono/5.0.16/latin/400/italic.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:italic;font-weight:400;src:url(/cf-fonts/s/roboto-mono/5.0.16/latin-ext/400/italic.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:italic;font-weight:400;src:url(/cf-fonts/s/roboto-mono/5.0.16/cyrillic/400/italic.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:italic;font-weight:400;src:url(/cf-fonts/s/roboto-mono/5.0.16/cyrillic-ext/400/italic.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:normal;font-weight:700;src:url(/cf-fonts/s/roboto-mono/5.0.16/vietnamese/700/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:normal;font-weight:700;src:url(/cf-fonts/s/roboto-mono/5.0.16/latin/700/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:normal;font-weight:700;src:url(/cf-fonts/s/roboto-mono/5.0.16/latin-ext/700/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:normal;font-weight:700;src:url(/cf-fonts/s/roboto-mono/5.0.16/cyrillic-ext/700/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:normal;font-weight:700;src:url(/cf-fonts/s/roboto-mono/5.0.16/cyrillic/700/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:normal;font-weight:700;src:url(/cf-fonts/s/roboto-mono/5.0.16/greek/700/normal.woff2);unicode-range:U+0370-03FF;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:italic;font-weight:700;src:url(/cf-fonts/s/roboto-mono/5.0.16/cyrillic/700/italic.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:italic;font-weight:700;src:url(/cf-fonts/s/roboto-mono/5.0.16/greek/700/italic.woff2);unicode-range:U+0370-03FF;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:italic;font-weight:700;src:url(/cf-fonts/s/roboto-mono/5.0.16/vietnamese/700/italic.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:italic;font-weight:700;src:url(/cf-fonts/s/roboto-mono/5.0.16/latin-ext/700/italic.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:italic;font-weight:700;src:url(/cf-fonts/s/roboto-mono/5.0.16/cyrillic-ext/700/italic.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:italic;font-weight:700;src:url(/cf-fonts/s/roboto-mono/5.0.16/latin/700/italic.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:fallback;}</style>
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/kitsune.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+
+  <!-- Preload logo -->
+  <link rel="preload" href="../assets/fox-logo.png" as="image">
+
+  <!-- Favicon Pack -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+  <link rel="shortcut icon" href="../assets/favicon/favicon.ico">
+
+  <!-- Correct Manifest (your real file) -->
+  <link rel="manifest" href="../assets/site.webmanifest">
+
+  <!-- Theme color -->
+  <meta name="theme-color" content="#F4AACA">
+
+  <!-- OpenGraph -->
+  <meta property="og:title" content="Kitsune Starter Guide">
+  <meta property="og:description" content="WEB-DL Handling • Cleanup • Automation • Best Practices">
+  <meta property="og:image" content="https://okami.icu/assets/social-card.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://0.0.0.0:8000/">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kitsune Starter Guide">
+  <meta name="twitter:description" content="WEB-DL Handling • Cleanup • Automation • Best Practices">
+  <meta name="twitter:image" content="https://okami.icu/assets/social-card.png">
+
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="tools.html#tools-software" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../okami_default.html" title="Kitsune Starter Guide" class="md-header__button md-logo" aria-label="Kitsune Starter Guide" data-md-component="logo">
+      
+  <img src="../assets/fox-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Kitsune Starter Guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tools
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../okami_default.html" title="Kitsune Starter Guide" class="md-nav__button md-logo" aria-label="Kitsune Starter Guide" data-md-component="logo">
+      
+  <img src="../assets/fox-logo.png" alt="logo">
+
+    </a>
+    Kitsune Starter Guide
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../okami_default.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    General Information
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    General Information
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../video_codecs_and_containers/video_codecs_and_containers.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video Codecs & Containers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../audio-codecs/audio-codecs.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audio Codecs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../subtitle-formats/subtitle-formats.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Subtitle Formats
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapters/chapters.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WEB-DL Handling Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    WEB-DL Handling Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basic
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Basic
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Web-DL-home/Web-DL-home.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how_to_find_content/how_to_find_content.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How To Find Content
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mkvtoolnix/mkvtoolnix.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MKVToolNix Cleanup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mediainfo/mediainfo.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MediaInfo Cleanup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../subtitles/subtitles.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Subtitles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapters-handling/chapters-handling.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tv-ordering/tv-ordering.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TV Show Ordering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../streaming-services/streaming-services.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Streaming Services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quality_breakdown/quality_breakdown.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quality Breakdown
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web-tier-list/web-tier-list.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Tier List
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../best-practices/best-practices.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Best Practices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Advanced
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../metadata/metadata.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Metadata
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../syncing-subtitles/syncing-subtitles.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syncing Subtitles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../what_is_hdr/what_is_hdr.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What Is HDR?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hybrid-web-dl/hybrid-web-dl.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DV HDR Hybrid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../audio-syncing/audio-syncing.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audio Syncying
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lossless-cutting-merging/lossless-cutting-merging.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lossless Cutting & Merging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Crunchyroll-subtitles/Crunchyroll-subtitles.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Crunchyroll Subtitles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools & Scripts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tools & Scripts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="tools.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scripts/scripts.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scripts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Comparisons Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Comparisons Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../comp/comp.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../avisynth-guide/avisynth-guide.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AviSynth+
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../avisynth-script/avisynth-script.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AvsPmod Script
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vapoursynth/vapoursynth.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VapourSynth
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../audio-comparison/audio-comparison.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audio Comparison
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Encoding Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Encoding Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction-encode/introduction-encode.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Beginners-encode/Beginners-encode.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Beginners Guide to Video Encoding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../source-encode/source-encode.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sourcing and Verifying Content
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DV-encode/DV-encode.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dolby Vision
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audio
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Audio
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../audio-encoding/audio-encoding.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audio Encoding Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../audio-bitdepth-sample-rate/audio-bitdepth-sample-rate.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bit-depth Reduction & Sample Rate Conversion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../audio-encoding-deew/audio-encoding-deew.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dolby Encoding Engine (DEE/DEEW)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../encode-aac-qaac/encode-aac-qaac.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AAC Encoding (qaac)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../encode-ac3-soundforge/encode-ac3-soundforge.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AC3 Encoding (Sound Forge)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../handjob/handjob.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Handjob Encoding Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../external-encode/external-encode.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Other Guides
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blu-ray Disk Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Blu-ray Disk Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fulldisc/fulldisc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Demuxing Blu-ray Disks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    REMUX Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    REMUX Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DV-remux/DV-remux.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dolby Vision Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../convert_lossless_audio/convert_lossless_audio.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lossless Audio Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../collecting_subtitles/collecting_subtitles.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Collecting Subtitles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../remux_dvd/remux_dvd.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DVDs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_5" id="__nav_7_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Subtitles & OCR
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Subtitles & OCR
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../videosubfinder/videosubfinder.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OCR from Hardsubs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../video-subtitle-extractor/video-subtitle-extractor.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OCR from Hardsubs (VSE)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SubExtractor/SubExtractor.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OCR from DVD/IDX-SUB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../positional_subtitles/positional_subtitles.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Positional Subtitles (ASS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="tools-software">Tools &amp; Software<a class="headerlink" href="tools.html#tools-software" title="Permanent link">&para;</a></h1>
+<p>A complete collection of all recommended tools used throughout the Kitsune Starter Guide.<br />
+Organized by category for easy navigation.</p>
+<div class="admonition abstract">
+<p class="admonition-title">What You'll Find</p>
+<ul>
+<li>Video &amp; Dolby Vision tools  </li>
+<li>Audio syncing and waveform tools  </li>
+<li>Subtitle editing and typesetting tools  </li>
+<li>File renaming and media organization  </li>
+<li>Automation and correction utilities  </li>
+</ul>
+</div>
+<hr />
+<h1 id="1-video-mkv-dolby-vision-tools">1. Video / MKV / Dolby Vision Tools<a class="headerlink" href="tools.html#1-video-mkv-dolby-vision-tools" title="Permanent link">&para;</a></h1>
+<h2 id="mkvtoolnix">MKVToolNix<a class="headerlink" href="tools.html#mkvtoolnix" title="Permanent link">&para;</a></h2>
+<p>The industry-standard tool for MKV muxing, remuxing, metadata editing, and embedding subtitles/fonts.</p>
+<p><strong>Includes:</strong>
+- MKVToolNix GUI<br />
+- mkvmerge (CLI)<br />
+- mkvextract (extract video/audio/subtitles/fonts)<br />
+- mkvpropedit (edit flags/metadata without remuxing)</p>
+<p><strong>Use Cases:</strong>
+- Add/replace audio tracks<br />
+- Apply audio delay offsets<br />
+- Attach fonts for ASS subtitles<br />
+- Reorder tracks and set default/forced flags<br />
+- Clean metadata and remove attachments  </p>
+<p>➡️ <strong><a href="https://mkvtoolnix.download/">https://mkvtoolnix.download/</a></strong>  </p>
+<hr />
+<h2 id="ddvt-dolby-vision-toolset">DDVT (Dolby Vision Toolset)<a class="headerlink" href="tools.html#ddvt-dolby-vision-toolset" title="Permanent link">&para;</a></h2>
+<p>Automates creation of <strong>DV Profile 8.1 Hybrid WEB-DL</strong> streams from DV + HDR sources.</p>
+<p><strong>Use Cases:</strong>
+- Convert DV-only streams into DV.HDR<br />
+- Inject RPU metadata<br />
+- Convert Profile 5/7 → 8.1<br />
+- Batch hybrid creation</p>
+<p>➡️ <strong><a href="https://github.com/DonaldFaQ/DDVT">https://github.com/DonaldFaQ/DDVT</a></strong>  </p>
+<hr />
+<h2 id="dovi_tool">dovi_tool<a class="headerlink" href="tools.html#dovi_tool" title="Permanent link">&para;</a></h2>
+<p>Powerful CLI tool for low-level Dolby Vision operations.</p>
+<p><strong>Use Cases:</strong>
+- Extract/convert RPU<br />
+- Inject RPU into HDR10/HDR10+ streams<br />
+- Convert DV profiles<br />
+- Analyze metadata</p>
+<p>➡️ <strong><a href="https://github.com/quietvoid/dovi_tool">https://github.com/quietvoid/dovi_tool</a></strong>  </p>
+<hr />
+<h2 id="ffmpeg">FFmpeg<a class="headerlink" href="tools.html#ffmpeg" title="Permanent link">&para;</a></h2>
+<p>Versatile command-line framework used for video/audio processing.</p>
+<p><strong>Use Cases:</strong>
+- Apply audio offsets (<code>-itsoffset</code>)<br />
+- Extract audio/video streams<br />
+- Convert HDR layers<br />
+- Combine video + audio</p>
+<p>➡️ <strong><a href="https://ffmpeg.org/">https://ffmpeg.org/</a></strong>  </p>
+<hr />
+<h2 id="davinci-resolve-adobe-premiere-pro">DaVinci Resolve / Adobe Premiere Pro<a class="headerlink" href="tools.html#davinci-resolve-adobe-premiere-pro" title="Permanent link">&para;</a></h2>
+<p>Professional editors for visual waveform syncing and timeline comparison.</p>
+<p><strong>Use Cases:</strong>
+- Fixing complex sync issues<br />
+- Drift correction<br />
+- Visual waveform matching  </p>
+<p>➡️ <strong><a href="https://www.blackmagicdesign.com/products/davinciresolve">DaVinci Resolve</a></strong><br />
+➡️ <strong><a href="https://www.adobe.com/products/premiere.html">Adobe Premiere Pro</a></strong>  </p>
+<hr />
+<h2 id="mediainfo">MediaInfo<a class="headerlink" href="tools.html#mediainfo" title="Permanent link">&para;</a></h2>
+<p>Essential tool for inspecting container metadata, codec details, HDR/Dolby Vision flags, bitrates, chapters, audio formats, and track structure.</p>
+<p><strong>Use Cases:</strong>
+- Verify HDR, HDR10+, and Dolby Vision profiles<br />
+- Check audio codecs, bitrates, language tags, and channel layouts<br />
+- Confirm subtitle formats<br />
+- Identify mismatches between providers<br />
+- Validate final mux integrity  </p>
+<p>➡️ <strong><a href="https://mediaarea.net/en/MediaInfo">https://mediaarea.net/en/MediaInfo</a></strong></p>
+<hr />
+<h2 id="streamfab-beginner-friendly-webdl-acquisition-tool">StreamFab (Beginner-Friendly WEB‑DL Acquisition Tool)<a class="headerlink" href="tools.html#streamfab-beginner-friendly-webdl-acquisition-tool" title="Permanent link">&para;</a></h2>
+<p>A popular tool for <strong>new users getting started with WEB‑DL workflows</strong>.<br />
+StreamFab allows beginners to download content from supported streaming services using a simple, GUI‑based approach.</p>
+<p><strong>Use Cases:</strong>
+- Easy WEB‑DL acquisition for beginners<br />
+- GUI workflow with no command-line knowledge required<br />
+- Works well with the workflows described in this guide<br />
+- Frequently paired with MKVToolNix, Aegisub, and FFmpeg for post‑processing  </p>
+<p>➡️ <strong>Official Site:</strong> <a href="https://streamfab.com/">https://streamfab.com/</a><br />
+➡️ <strong>YouTube Tutorials:</strong> <a href="https://www.youtube.com/@StreamFabOfficial">https://www.youtube.com/@StreamFabOfficial</a>  </p>
+<div class="admonition note">
+<p class="admonition-title">For Beginners</p>
+<p>StreamFab is widely used by people <strong>just starting out</strong> with WEB‑DL creation<br />
+before transitioning into advanced workflows like DDVT, FFmpeg, and manual muxing.</p>
+</div>
+<hr />
+<h1 id="2-audio-tools-syncing-offsets-analysis">2. Audio Tools (Syncing, Offsets, Analysis)<a class="headerlink" href="tools.html#2-audio-tools-syncing-offsets-analysis" title="Permanent link">&para;</a></h1>
+<h2 id="offsetfinder">OffsetFinder<a class="headerlink" href="tools.html#offsetfinder" title="Permanent link">&para;</a></h2>
+<p>Automatically determines audio delay between two tracks.</p>
+<p><strong>Use Cases:</strong>
+- Auto-detect Crunchyroll vs Amazon audio offsets<br />
+- Verify manual waveform comparisons<br />
+- Ideal for WEB-DL audio sync workflows  </p>
+<p>➡️ <strong><a href="https://github.com/c22dev/OffsetFinder">OffsetFinder</a></strong>  </p>
+<hr />
+<h2 id="eac3to">eac3to<a class="headerlink" href="tools.html#eac3to" title="Permanent link">&para;</a></h2>
+<p>Advanced audio processing tool for delay shifting, demuxing, and remuxing.</p>
+<p><strong>Use Cases:</strong>
+- Apply +ms or –ms delays<br />
+- Fix AC3/EAC3/DTS tracks<br />
+- Lossless delay correction  </p>
+<p>➡️ <strong><a href="https://madshi.net/eac3to/">https://madshi.net/eac3to/</a></strong>  </p>
+<hr />
+<h2 id="audacity">Audacity<a class="headerlink" href="tools.html#audacity" title="Permanent link">&para;</a></h2>
+<p>Free waveform editor — perfect for spotting offsets visually.</p>
+<p><strong>Use Cases:</strong>
+- Compare AAC vs DDP waveforms<br />
+- Identify sync points<br />
+- Confirm audio drift  </p>
+<p>➡️ <strong><a href="https://www.audacityteam.org/">https://www.audacityteam.org/</a></strong>  </p>
+<hr />
+<h2 id="mpv-mpc-hc-vlc">MPV / MPC-HC / VLC<a class="headerlink" href="tools.html#mpv-mpc-hc-vlc" title="Permanent link">&para;</a></h2>
+<p>Playback tools used to validate sync during testing.</p>
+<p>➡️ <strong><a href="https://mpv.io/">MPV</a></strong><br />
+➡️ <strong><a href="https://github.com/clsid2/mpc-hc">MPC-HC</a></strong><br />
+➡️ <strong><a href="https://www.videolan.org/vlc/">VLC</a></strong>  </p>
+<hr />
+<h1 id="3-subtitle-editing-typesetting-tools">3. Subtitle Editing &amp; Typesetting Tools<a class="headerlink" href="tools.html#3-subtitle-editing-typesetting-tools" title="Permanent link">&para;</a></h1>
+<h2 id="subtitle-edit">Subtitle Edit<a class="headerlink" href="tools.html#subtitle-edit" title="Permanent link">&para;</a></h2>
+<p>Essential for fixing subtitle timing, correcting LayoutRes, converting formats, and cleaning ASS/SRT.</p>
+<p><strong>Use Cases:</strong>
+- Fix incorrect PlayRes / LayoutRes values<br />
+- Remove SDH<br />
+- Format conversion (VTT → SRT / ASS)<br />
+- Timing correction<br />
+- OCR for PGS subtitles<br />
+- Fonts Collector (detects missing ASS fonts)</p>
+<p>➡️ <strong><a href="https://www.nikse.dk/subtitleedit">https://www.nikse.dk/subtitleedit</a></strong>  </p>
+<hr />
+<h2 id="aegisub">Aegisub<a class="headerlink" href="tools.html#aegisub" title="Permanent link">&para;</a></h2>
+<p>The best tool for ASS subtitle editing, typesetting, and sign styling.</p>
+<p><strong>Use Cases:</strong>
+- Typesetting Crunchyroll-style ASS<br />
+- Waveform/spectrum audio sync<br />
+- Sign recreation (blur, shadows, transforms)<br />
+- Style editing (fonts, outlines, margins)<br />
+- Karaoke effects</p>
+<div class="admonition tip">
+<p class="admonition-title">Aegisub version guidance</p>
+<ul>
+<li><strong>Typesetters:</strong> Use the <strong><a href="https://github.com/arch1t3cht/Aegisub">arch1t3cht fork</a></strong> for modern ASS typesetting, motion, outlines, and typeset sign recreation.</li>
+<li><strong>Non-typesetters (timing, basic edits, cleanup):</strong> Use <strong><a href="https://github.com/arch1t3cht/Aegisub/releases/tag/v3.4.0">Aegisub 3.4.0</a></strong>.</li>
+</ul>
+<p>See upstream bug report:<br />
+<a href="https://github.com/arch1t3cht/Aegisub/issues/177">arch1t3cht/Aegisub issue 177</a></p>
+</div>
+<hr />
+<h2 id="crunchyroll-fonts-pack">Crunchyroll Fonts Pack<a class="headerlink" href="https://okami.icu/tools/tools.html#crunchyroll-fonts-pack" title="Permanent link">&para;</a></h2>
+<p>A collection of commonly used CR typesetting fonts.</p>
+<p>➡️ <strong><a href="https://files.catbox.moe/m0yh7p.zip">Crunchyroll Fonts</a></strong>  </p>
+<hr />
+<h1 id="4-automation-subtitle-sync-tools">4. Automation &amp; Subtitle Sync Tools<a class="headerlink" href="https://okami.icu/tools/tools.html#4-automation-subtitle-sync-tools" title="Permanent link">&para;</a></h1>
+<h2 id="alass">alass<a class="headerlink" href="https://okami.icu/tools/tools.html#alass" title="Permanent link">&para;</a></h2>
+<p>Audio-assisted subtitle sync tool.</p>
+<p>➡️ <strong><a href="https://github.com/kaegi/alass">https://github.com/kaegi/alass</a></strong>  </p>
+<hr />
+<h2 id="autosubsync">AutoSubSync<a class="headerlink" href="https://okami.icu/tools/tools.html#autosubsync" title="Permanent link">&para;</a></h2>
+<p>Machine-learning based subtitle timing corrector.</p>
+<p>➡️ <strong><a href="https://github.com/denizsafak/AutoSubSync">https://github.com/denizsafak/AutoSubSync</a></strong>  </p>
+<hr />
+<h1 id="5-file-renaming-media-organization">5. File Renaming &amp; Media Organization<a class="headerlink" href="https://okami.icu/tools/tools.html#5-file-renaming-media-organization" title="Permanent link">&para;</a></h1>
+<h2 id="filebot">FileBot<a class="headerlink" href="https://okami.icu/tools/tools.html#filebot" title="Permanent link">&para;</a></h2>
+<p>Powerful tool for renaming and organizing media using metadata sources.</p>
+<p>➡️ <strong><a href="https://www.filebot.net/">https://www.filebot.net/</a></strong>  </p>
+<hr />
+<h2 id="advanced-renamer">Advanced Renamer<a class="headerlink" href="https://okami.icu/tools/tools.html#advanced-renamer" title="Permanent link">&para;</a></h2>
+<p>Flexible batch renaming tool for pre-processing filenames.</p>
+<p>➡️ <strong><a href="https://www.advancedrenamer.com/">https://www.advancedrenamer.com/</a></strong>  </p>
+<hr />
+<h1 id="6-additional-utilities">6. Additional Utilities<a class="headerlink" href="https://okami.icu/tools/tools.html#6-additional-utilities" title="Permanent link">&para;</a></h1>
+<h2 id="jmkvpropedit">jmkvpropedit<a class="headerlink" href="https://okami.icu/tools/tools.html#jmkvpropedit" title="Permanent link">&para;</a></h2>
+<p>Batch editor for MKV metadata using mkvpropedit.</p>
+<p>➡️ <strong><a href="https://github.com/BrunoReX/jmkvpropedit">https://github.com/BrunoReX/jmkvpropedit</a></strong>  </p>
+<hr />
+<h1 id="see-also">See Also<a class="headerlink" href="https://okami.icu/tools/tools.html#see-also" title="Permanent link">&para;</a></h1>
+<ul>
+<li><a href="https://okami.icu/mkvtoolnix/mkvtoolnix.html">MKVToolNix Cleanup</a>  </li>
+<li><a href="https://okami.icu/subtitles/subtitles.html">Subtitle Handling</a>  </li>
+<li><a href="https://okami.icu/audio-syncing/audio-syncing.html">Audio Syncing</a>  </li>
+<li><a href="https://okami.icu/Crunchyroll-subtitles/Crunchyroll-subtitles.html">Crunchyroll Subtitle Guide</a>  </li>
+<li><a href="https://okami.icu/hybrid-web-dl/hybrid-web-dl.html">Hybrid WEB-DL Guide</a>  </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="https://okami.icu/Crunchyroll-subtitles/Crunchyroll-subtitles.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Crunchyroll Subtitles">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Crunchyroll Subtitles
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="https://okami.icu/scripts/scripts.html" class="md-footer__link md-footer__link--next" aria-label="Next: Scripts">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Scripts
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy", "navigation.tracking", "navigation.footer", "search.suggest", "search.highlight", "content.image.zoom"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../assets/custom.js"></script>
+      
+    
+  </body>
+</html>

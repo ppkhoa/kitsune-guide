@@ -1,0 +1,3938 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://0.0.0.0:8000/audio-encoding/">
+      
+      
+        <link rel="prev" href="../DV-encode/">
+      
+      
+        <link rel="next" href="../audio-bitdepth-sample-rate/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Audio Encoding Overview - Kitsune Starter Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        
+        <style type="text/css">@font-face {font-family:Roboto;font-style:normal;font-weight:300;src:url(/cf-fonts/s/roboto/5.0.11/cyrillic-ext/300/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:300;src:url(/cf-fonts/s/roboto/5.0.11/cyrillic/300/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:300;src:url(/cf-fonts/s/roboto/5.0.11/greek/300/normal.woff2);unicode-range:U+0370-03FF;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:300;src:url(/cf-fonts/s/roboto/5.0.11/greek-ext/300/normal.woff2);unicode-range:U+1F00-1FFF;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:300;src:url(/cf-fonts/s/roboto/5.0.11/latin-ext/300/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:300;src:url(/cf-fonts/s/roboto/5.0.11/latin/300/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:300;src:url(/cf-fonts/s/roboto/5.0.11/vietnamese/300/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:300;src:url(/cf-fonts/s/roboto/5.0.11/vietnamese/300/italic.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:300;src:url(/cf-fonts/s/roboto/5.0.11/cyrillic-ext/300/italic.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:300;src:url(/cf-fonts/s/roboto/5.0.11/latin-ext/300/italic.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:300;src:url(/cf-fonts/s/roboto/5.0.11/cyrillic/300/italic.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:300;src:url(/cf-fonts/s/roboto/5.0.11/greek/300/italic.woff2);unicode-range:U+0370-03FF;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:300;src:url(/cf-fonts/s/roboto/5.0.11/latin/300/italic.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:300;src:url(/cf-fonts/s/roboto/5.0.11/greek-ext/300/italic.woff2);unicode-range:U+1F00-1FFF;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/cyrillic/400/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/latin/400/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/cyrillic-ext/400/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/latin-ext/400/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/greek-ext/400/normal.woff2);unicode-range:U+1F00-1FFF;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/greek/400/normal.woff2);unicode-range:U+0370-03FF;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/vietnamese/400/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/greek-ext/400/italic.woff2);unicode-range:U+1F00-1FFF;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/cyrillic-ext/400/italic.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/latin/400/italic.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/vietnamese/400/italic.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/greek/400/italic.woff2);unicode-range:U+0370-03FF;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/latin-ext/400/italic.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/cyrillic/400/italic.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/latin/700/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/cyrillic-ext/700/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/cyrillic/700/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/greek/700/normal.woff2);unicode-range:U+0370-03FF;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/greek-ext/700/normal.woff2);unicode-range:U+1F00-1FFF;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/latin-ext/700/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/vietnamese/700/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/vietnamese/700/italic.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/latin/700/italic.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/latin-ext/700/italic.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/greek/700/italic.woff2);unicode-range:U+0370-03FF;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/cyrillic/700/italic.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/greek-ext/700/italic.woff2);unicode-range:U+1F00-1FFF;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/cyrillic-ext/700/italic.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto-mono/5.0.16/latin-ext/400/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto-mono/5.0.16/vietnamese/400/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto-mono/5.0.16/cyrillic/400/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto-mono/5.0.16/cyrillic-ext/400/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto-mono/5.0.16/greek/400/normal.woff2);unicode-range:U+0370-03FF;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto-mono/5.0.16/latin/400/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:italic;font-weight:400;src:url(/cf-fonts/s/roboto-mono/5.0.16/latin-ext/400/italic.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:italic;font-weight:400;src:url(/cf-fonts/s/roboto-mono/5.0.16/greek/400/italic.woff2);unicode-range:U+0370-03FF;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:italic;font-weight:400;src:url(/cf-fonts/s/roboto-mono/5.0.16/cyrillic-ext/400/italic.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:italic;font-weight:400;src:url(/cf-fonts/s/roboto-mono/5.0.16/vietnamese/400/italic.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:italic;font-weight:400;src:url(/cf-fonts/s/roboto-mono/5.0.16/cyrillic/400/italic.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:italic;font-weight:400;src:url(/cf-fonts/s/roboto-mono/5.0.16/latin/400/italic.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:normal;font-weight:700;src:url(/cf-fonts/s/roboto-mono/5.0.16/latin/700/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:normal;font-weight:700;src:url(/cf-fonts/s/roboto-mono/5.0.16/latin-ext/700/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:normal;font-weight:700;src:url(/cf-fonts/s/roboto-mono/5.0.16/vietnamese/700/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:normal;font-weight:700;src:url(/cf-fonts/s/roboto-mono/5.0.16/greek/700/normal.woff2);unicode-range:U+0370-03FF;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:normal;font-weight:700;src:url(/cf-fonts/s/roboto-mono/5.0.16/cyrillic/700/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:normal;font-weight:700;src:url(/cf-fonts/s/roboto-mono/5.0.16/cyrillic-ext/700/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:italic;font-weight:700;src:url(/cf-fonts/s/roboto-mono/5.0.16/latin/700/italic.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:italic;font-weight:700;src:url(/cf-fonts/s/roboto-mono/5.0.16/cyrillic/700/italic.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:italic;font-weight:700;src:url(/cf-fonts/s/roboto-mono/5.0.16/latin-ext/700/italic.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:italic;font-weight:700;src:url(/cf-fonts/s/roboto-mono/5.0.16/greek/700/italic.woff2);unicode-range:U+0370-03FF;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:italic;font-weight:700;src:url(/cf-fonts/s/roboto-mono/5.0.16/vietnamese/700/italic.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:italic;font-weight:700;src:url(/cf-fonts/s/roboto-mono/5.0.16/cyrillic-ext/700/italic.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:fallback;}</style>
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/kitsune.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+
+  <!-- Preload logo -->
+  <link rel="preload" href="/assets/fox-logo.png" as="image">
+
+  <!-- Favicon Pack -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+  <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+
+  <!-- Correct Manifest (your real file) -->
+  <link rel="manifest" href="/assets/site.webmanifest">
+
+  <!-- Theme color -->
+  <meta name="theme-color" content="#F4AACA">
+
+  <!-- OpenGraph -->
+  <meta property="og:title" content="Kitsune Starter Guide">
+  <meta property="og:description" content="WEB-DL Handling • Cleanup • Automation • Best Practices">
+  <meta property="og:image" content="https://okami.icu/assets/social-card.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://0.0.0.0:8000/">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kitsune Starter Guide">
+  <meta name="twitter:description" content="WEB-DL Handling • Cleanup • Automation • Best Practices">
+  <meta name="twitter:image" content="https://okami.icu/assets/social-card.png">
+
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#audio-encoding-overview" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Kitsune Starter Guide" class="md-header__button md-logo" aria-label="Kitsune Starter Guide" data-md-component="logo">
+      
+  <img src="/assets/fox-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Kitsune Starter Guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Audio Encoding Overview
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Kitsune Starter Guide" class="md-nav__button md-logo" aria-label="Kitsune Starter Guide" data-md-component="logo">
+      
+  <img src="/assets/fox-logo.png" alt="logo">
+
+    </a>
+    Kitsune Starter Guide
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    General Information
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    General Information
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../video_codecs_and_containers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video Codecs & Containers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../audio-codecs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audio Codecs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../subtitle-formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Subtitle Formats
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WEB-DL Handling Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    WEB-DL Handling Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basic
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Basic
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Web-DL-home/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how_to_find_content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How To Find Content
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mkvtoolnix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MKVToolNix Cleanup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mediainfo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MediaInfo Cleanup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../subtitles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Subtitles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapters-handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tv-ordering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TV Show Ordering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../streaming-services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Streaming Services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quality_breakdown/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quality Breakdown
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web-tier-list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Tier List
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../best-practices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Best Practices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Advanced
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../metadata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Metadata
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../syncing-subtitles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syncing Subtitles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../what_is_hdr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What Is HDR?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hybrid-web-dl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DV HDR Hybrid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../audio-syncing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audio Syncying
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lossless-cutting-merging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lossless Cutting & Merging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Crunchyroll-subtitles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Crunchyroll Subtitles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools & Scripts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tools & Scripts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scripts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Comparisons Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Comparisons Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../comp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../avisynth-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AviSynth+
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../avisynth-script/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AvsPmod Script
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vapoursynth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VapourSynth
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../audio-comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audio Comparison
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Encoding Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Encoding Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction-encode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Beginners-encode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Beginners Guide to Video Encoding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../source-encode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sourcing and Verifying Content
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DV-encode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dolby Vision
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audio
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Audio
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audio Encoding Overview
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audio Encoding Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-list-of-lossless-and-lossy-codecs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. List of Lossless and Lossy Codecs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. List of Lossless and Lossy Codecs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lossless" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lossless
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lossy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lossy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-acceptable-conversions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Acceptable Conversions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Acceptable Conversions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#encodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Encodes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Encodes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#main-audio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Main Audio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secondary-audio-commentaries-isolated-scores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Secondary Audio (commentaries, isolated scores)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remuxes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remuxes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Remuxes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#main-audio_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Main Audio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secondary-audio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Secondary Audio
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-sd-encodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. SD Encodes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. SD Encodes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#main-audio_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Main Audio
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Main Audio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from-lossless-30-71" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Lossless 3.0 – 7.1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-lossless-10-20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Lossless 1.0 / 2.0
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-lossy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Lossy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secondary-audio_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Secondary Audio
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Secondary Audio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from-lossless" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Lossless
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-lossy_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Lossy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-720p-encodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 720p Encodes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 720p Encodes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#main-audio_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Main Audio
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Main Audio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from-lossless-30-71_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Lossless 3.0 – 7.1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-lossless-10-20_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Lossless 1.0 / 2.0
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-lossy_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Lossy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secondary-audio_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Secondary Audio
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Secondary Audio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from-lossless_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Lossless
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-lossy_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Lossy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-1080p-encodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 1080p Encodes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 1080p Encodes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#main-audio_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Main Audio
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Main Audio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from-lossless-30-71_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Lossless 3.0 – 7.1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-lossless-10-20_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Lossless 1.0 / 2.0
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-lossy_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Lossy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secondary-audio_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Secondary Audio
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Secondary Audio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from-lossless_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Lossless
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-lossy_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Lossy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-2160p-encodes-uhd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 2160p Encodes (UHD)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 2160p Encodes (UHD)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#main-audio_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Main Audio
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Main Audio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from-lossless-30-71_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Lossless 3.0 – 7.1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-lossless-10-20_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Lossless 1.0 / 2.0
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-lossy_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Lossy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secondary-audio_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Secondary Audio
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Secondary Audio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from-lossless_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Lossless
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-lossy_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Lossy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-miscellaneous-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Miscellaneous Notes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Miscellaneous Notes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#programs-to-encode-ac3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Programs to Encode AC3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#programs-to-encode-e-ac3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Programs to Encode E-AC3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#programs-to-encode-aac" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Programs to Encode AAC
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#guides" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Guides
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-rules-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional Rules &amp; Notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#credits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Credits
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../audio-bitdepth-sample-rate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bit-depth Reduction & Sample Rate Conversion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../audio-encoding-deew/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dolby Encoding Engine (DEE/DEEW)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../encode-aac-qaac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AAC Encoding (qaac)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../encode-ac3-soundforge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AC3 Encoding (Sound Forge)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../handjob/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Handjob Encoding Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../external-encode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Other Guides
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blu-ray Disk Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Blu-ray Disk Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fulldisc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Demuxing Blu-ray Disks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    REMUX Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    REMUX Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DV-remux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dolby Vision Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../convert_lossless_audio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lossless Audio Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../collecting_subtitles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Collecting Subtitles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../remux_dvd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DVDs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_5" id="__nav_7_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Subtitles & OCR
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Subtitles & OCR
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../videosubfinder/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OCR from Hardsubs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../video-subtitle-extractor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OCR from Hardsubs (VSE)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SubExtractor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OCR from DVD/IDX-SUB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../positional_subtitles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Positional Subtitles (ASS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-list-of-lossless-and-lossy-codecs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. List of Lossless and Lossy Codecs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. List of Lossless and Lossy Codecs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lossless" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lossless
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lossy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lossy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-acceptable-conversions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Acceptable Conversions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Acceptable Conversions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#encodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Encodes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Encodes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#main-audio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Main Audio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secondary-audio-commentaries-isolated-scores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Secondary Audio (commentaries, isolated scores)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remuxes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remuxes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Remuxes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#main-audio_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Main Audio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secondary-audio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Secondary Audio
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-sd-encodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. SD Encodes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. SD Encodes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#main-audio_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Main Audio
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Main Audio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from-lossless-30-71" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Lossless 3.0 – 7.1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-lossless-10-20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Lossless 1.0 / 2.0
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-lossy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Lossy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secondary-audio_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Secondary Audio
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Secondary Audio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from-lossless" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Lossless
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-lossy_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Lossy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-720p-encodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 720p Encodes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 720p Encodes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#main-audio_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Main Audio
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Main Audio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from-lossless-30-71_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Lossless 3.0 – 7.1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-lossless-10-20_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Lossless 1.0 / 2.0
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-lossy_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Lossy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secondary-audio_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Secondary Audio
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Secondary Audio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from-lossless_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Lossless
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-lossy_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Lossy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-1080p-encodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 1080p Encodes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 1080p Encodes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#main-audio_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Main Audio
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Main Audio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from-lossless-30-71_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Lossless 3.0 – 7.1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-lossless-10-20_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Lossless 1.0 / 2.0
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-lossy_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Lossy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secondary-audio_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Secondary Audio
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Secondary Audio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from-lossless_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Lossless
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-lossy_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Lossy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-2160p-encodes-uhd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 2160p Encodes (UHD)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 2160p Encodes (UHD)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#main-audio_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Main Audio
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Main Audio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from-lossless-30-71_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Lossless 3.0 – 7.1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-lossless-10-20_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Lossless 1.0 / 2.0
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-lossy_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Lossy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secondary-audio_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Secondary Audio
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Secondary Audio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from-lossless_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Lossless
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-lossy_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Lossy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-miscellaneous-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Miscellaneous Notes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Miscellaneous Notes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#programs-to-encode-ac3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Programs to Encode AC3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#programs-to-encode-e-ac3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Programs to Encode E-AC3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#programs-to-encode-aac" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Programs to Encode AAC
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#guides" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Guides
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-rules-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional Rules &amp; Notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#credits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Credits
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="audio-encoding-overview">Audio Encoding Overview<a class="headerlink" href="#audio-encoding-overview" title="Permanent link">&para;</a></h1>
+<p>This guide outlines correct handling, conversion rules, and codec expectations for audio in encodes across SD, 720p, 1080p, and 2160p releases.<br />
+It reflects standard tracker rules and best practices.</p>
+<hr />
+<h2 id="1-list-of-lossless-and-lossy-codecs">1. List of Lossless and Lossy Codecs<a class="headerlink" href="#1-list-of-lossless-and-lossy-codecs" title="Permanent link">&para;</a></h2>
+<h3 id="lossless"><strong>Lossless</strong><a class="headerlink" href="#lossless" title="Permanent link">&para;</a></h3>
+<ul>
+<li>DTS-HD MA  </li>
+<li>TrueHD  </li>
+<li>LPCM  </li>
+<li>FLAC  </li>
+</ul>
+<h3 id="lossy"><strong>Lossy</strong><a class="headerlink" href="#lossy" title="Permanent link">&para;</a></h3>
+<ul>
+<li>AC-3 / DD  </li>
+<li>DTS  </li>
+<li>DTS-HD HR  </li>
+<li>AAC  </li>
+<li>E-AC-3 / DDP / DD+  </li>
+<li>Vorbis  </li>
+<li>Opus  </li>
+</ul>
+<hr />
+<h2 id="2-acceptable-conversions">2. Acceptable Conversions<a class="headerlink" href="#2-acceptable-conversions" title="Permanent link">&para;</a></h2>
+<h3 id="encodes"><strong>Encodes</strong><a class="headerlink" href="#encodes" title="Permanent link">&para;</a></h3>
+<h4 id="main-audio"><strong>Main Audio</strong><a class="headerlink" href="#main-audio" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Lossless → Lossy <strong>allowed</strong>  </li>
+<li>Lossy → Lossy <strong>NOT allowed</strong>  </li>
+<li>Lossless <strong>only allowed</strong> for FLAC 1.0 / 2.0  </li>
+<li>Exception: <strong>Concerts &amp; UHD encodes</strong>, where all lossless formats except LPCM are allowed.</li>
+</ul>
+<h4 id="secondary-audio-commentaries-isolated-scores"><strong>Secondary Audio (commentaries, isolated scores)</strong><a class="headerlink" href="#secondary-audio-commentaries-isolated-scores" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Lossless → Lossy <strong>allowed</strong>  </li>
+<li>Lossy → Lossy <strong>allowed</strong>  </li>
+<li>Lossless allowed only for <strong>isolated scores</strong>, not for commentaries.</li>
+</ul>
+<hr />
+<h3 id="remuxes"><strong>Remuxes</strong><a class="headerlink" href="#remuxes" title="Permanent link">&para;</a></h3>
+<h4 id="main-audio_1"><strong>Main Audio</strong><a class="headerlink" href="#main-audio_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Lossless → Lossy <strong>NOT allowed</strong>  </li>
+<li>Lossy → Lossy <strong>NOT allowed</strong>  </li>
+<li>Lossless → Lossless <strong>allowed in select cases</strong></li>
+<li>Typically for converting LPCM → FLAC, or remapping 1.0/2.0 lossless to FLAC.</li>
+<li><strong>DTS-HD HR must NOT be converted</strong></li>
+</ul>
+<h4 id="secondary-audio"><strong>Secondary Audio</strong><a class="headerlink" href="#secondary-audio" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Lossless → Lossy <strong>NOT allowed</strong>  </li>
+<li>Lossy → Lossy <strong>NOT allowed</strong>  </li>
+<li>Lossless → Lossless allowed in select cases  </li>
+<li>Typically for 1.0 / 2.0 → FLAC  </li>
+</ul>
+<hr />
+<h2 id="3-sd-encodes">3. SD Encodes<a class="headerlink" href="#3-sd-encodes" title="Permanent link">&para;</a></h2>
+<h3 id="main-audio_2"><strong>Main Audio</strong><a class="headerlink" href="#main-audio_2" title="Permanent link">&para;</a></h3>
+<h4 id="from-lossless-30-71">From Lossless 3.0 – 7.1<a class="headerlink" href="#from-lossless-30-71" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Preferred: <strong>448 kbps AC3</strong>  </li>
+<li>Maximum: <strong>640 kbps AC3</strong>  </li>
+<li>Note: AC3 does not support &gt;5.1 channels  </li>
+</ul>
+<h4 id="from-lossless-10-20">From Lossless 1.0 / 2.0<a class="headerlink" href="#from-lossless-10-20" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Preferred: <strong>High-quality AAC</strong>  </li>
+<li>Maximum: <strong>16-bit FLAC</strong>  </li>
+</ul>
+<h4 id="from-lossy">From Lossy<a class="headerlink" href="#from-lossy" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Leave untouched (<strong>passthrough</strong>)  </li>
+<li>Exception: <strong>DTS-HD HR MUST be transcoded to AC3</strong></li>
+</ul>
+<h3 id="secondary-audio_1"><strong>Secondary Audio</strong><a class="headerlink" href="#secondary-audio_1" title="Permanent link">&para;</a></h3>
+<h4 id="from-lossless">From Lossless<a class="headerlink" href="#from-lossless" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Medium-quality AAC / Opus  </li>
+</ul>
+<h4 id="from-lossy_1">From Lossy<a class="headerlink" href="#from-lossy_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Preferred: Medium-quality AAC / Opus  </li>
+<li>Maximum: Leave untouched (<strong>passthrough</strong>)  </li>
+</ul>
+<blockquote>
+<p>All secondary audio rules assume 1.0/2.0.<br />
+If higher channels exist, treat as main audio.</p>
+</blockquote>
+<hr />
+<h2 id="4-720p-encodes">4. 720p Encodes<a class="headerlink" href="#4-720p-encodes" title="Permanent link">&para;</a></h2>
+<h3 id="main-audio_3"><strong>Main Audio</strong><a class="headerlink" href="#main-audio_3" title="Permanent link">&para;</a></h3>
+<h4 id="from-lossless-30-71_1">From Lossless 3.0 – 7.1<a class="headerlink" href="#from-lossless-30-71_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Preferred: <strong>640 kbps AC3</strong>  </li>
+<li>Maximum: <strong>1509 kbps DTS</strong>  </li>
+<li>Note: AC3 does not support &gt;5.1  </li>
+</ul>
+<h4 id="from-lossless-10-20_1">From Lossless 1.0 / 2.0<a class="headerlink" href="#from-lossless-10-20_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Preferred: <strong>High-quality AAC</strong>  </li>
+<li>Maximum: <strong>24-bit FLAC</strong> (restricted bitrate)</li>
+</ul>
+<h4 id="from-lossy_2">From Lossy<a class="headerlink" href="#from-lossy_2" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Leave untouched (<strong>passthrough</strong>)  </li>
+<li>Exception: DTS-HD HR → <strong>AC3</strong> or <strong>DTS core</strong></li>
+</ul>
+<h3 id="secondary-audio_2"><strong>Secondary Audio</strong><a class="headerlink" href="#secondary-audio_2" title="Permanent link">&para;</a></h3>
+<h4 id="from-lossless_1">From Lossless<a class="headerlink" href="#from-lossless_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Preferred: Medium-quality AAC / Opus  </li>
+<li>Maximum: High-quality AAC / Opus  </li>
+</ul>
+<h4 id="from-lossy_3">From Lossy<a class="headerlink" href="#from-lossy_3" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Preferred: High-quality AAC / Opus  </li>
+<li>Maximum: Leave untouched</li>
+</ul>
+<hr />
+<h2 id="5-1080p-encodes">5. 1080p Encodes<a class="headerlink" href="#5-1080p-encodes" title="Permanent link">&para;</a></h2>
+<h3 id="main-audio_4"><strong>Main Audio</strong><a class="headerlink" href="#main-audio_4" title="Permanent link">&para;</a></h3>
+<h4 id="from-lossless-30-71_2">From Lossless 3.0 – 7.1<a class="headerlink" href="#from-lossless-30-71_2" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Preferred:</li>
+<li><strong>1280–1536 kbps E-AC3</strong> for 7.1</li>
+<li><strong>768–1024 kbps E-AC3</strong> for 5.1</li>
+<li>Other acceptable: 640 kbps AC3, DTS up to 1509 kbps</li>
+</ul>
+<h4 id="from-lossless-10-20_2">From Lossless 1.0 / 2.0<a class="headerlink" href="#from-lossless-10-20_2" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Preferred: <strong>16-bit FLAC</strong>  </li>
+<li>Maximum: <strong>24-bit FLAC</strong> (restricted bitrate)</li>
+</ul>
+<h4 id="from-lossy_4">From Lossy<a class="headerlink" href="#from-lossy_4" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Leave untouched (<strong>passthrough</strong>)  </li>
+<li>Exception: DTS-HD HR → <strong>(E)AC3</strong> or DTS core.</li>
+</ul>
+<h3 id="secondary-audio_3"><strong>Secondary Audio</strong><a class="headerlink" href="#secondary-audio_3" title="Permanent link">&para;</a></h3>
+<h4 id="from-lossless_2">From Lossless<a class="headerlink" href="#from-lossless_2" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Preferred: Medium-quality AAC / Opus  </li>
+<li>Maximum: High-quality AAC / Opus  </li>
+</ul>
+<h4 id="from-lossy_5">From Lossy<a class="headerlink" href="#from-lossy_5" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Preferred: High-quality AAC / Opus  </li>
+<li>Maximum: Leave untouched  </li>
+</ul>
+<hr />
+<h2 id="6-2160p-encodes-uhd">6. 2160p Encodes (UHD)<a class="headerlink" href="#6-2160p-encodes-uhd" title="Permanent link">&para;</a></h2>
+<h3 id="main-audio_5"><strong>Main Audio</strong><a class="headerlink" href="#main-audio_5" title="Permanent link">&para;</a></h3>
+<h4 id="from-lossless-30-71_3">From Lossless 3.0 – 7.1<a class="headerlink" href="#from-lossless-30-71_3" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Leave untouched</strong>  </li>
+<li><strong>Do NOT convert to any lossy codec</strong></li>
+</ul>
+<h4 id="from-lossless-10-20_3">From Lossless 1.0 / 2.0<a class="headerlink" href="#from-lossless-10-20_3" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Preferred: <strong>FLAC (original bit-depth)</strong>  </li>
+<li>Maximum: Leave untouched  </li>
+<li>Exception: <strong>LPCM must be converted</strong></li>
+</ul>
+<h4 id="from-lossy_6">From Lossy<a class="headerlink" href="#from-lossy_6" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Leave untouched (<strong>passthrough</strong>)  </li>
+</ul>
+<h3 id="secondary-audio_4"><strong>Secondary Audio</strong><a class="headerlink" href="#secondary-audio_4" title="Permanent link">&para;</a></h3>
+<h4 id="from-lossless_3">From Lossless<a class="headerlink" href="#from-lossless_3" title="Permanent link">&para;</a></h4>
+<ul>
+<li>High-quality AAC / Opus  </li>
+</ul>
+<h4 id="from-lossy_7">From Lossy<a class="headerlink" href="#from-lossy_7" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Leave untouched  </li>
+</ul>
+<hr />
+<h2 id="7-miscellaneous-notes">7. Miscellaneous Notes<a class="headerlink" href="#7-miscellaneous-notes" title="Permanent link">&para;</a></h2>
+<h3 id="programs-to-encode-ac3"><strong>Programs to Encode AC3</strong><a class="headerlink" href="#programs-to-encode-ac3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Dolby Encoding Engine (DEE)  </li>
+<li>Audition 2017  </li>
+<li>Sound Forge Pro  </li>
+<li>Dolby Media Producer  </li>
+<li>FFmpeg &amp; eac3to (less preferred; FFmpeg &gt; eac3to)</li>
+</ul>
+<h3 id="programs-to-encode-e-ac3"><strong>Programs to Encode E-AC3</strong><a class="headerlink" href="#programs-to-encode-e-ac3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>DEE  </li>
+<li>Dolby Media Producer  </li>
+<li>Audition 2017  </li>
+<li>FFmpeg (less preferred)  </li>
+<li>For <strong>7.1 E-AC3</strong>: must use <strong>Blu-ray profile</strong> (DEE/DMP only)</li>
+</ul>
+<h3 id="programs-to-encode-aac"><strong>Programs to Encode AAC</strong><a class="headerlink" href="#programs-to-encode-aac" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>qaac</strong> (recommended)</li>
+</ul>
+<hr />
+<h2 id="guides">Guides<a class="headerlink" href="#guides" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong><a href="../audio-encoding-deew/">Dolby Encoding Engine (DEE) + Wrapper</a></strong>  </li>
+<li><strong><a href="../encode-aac-qaac/">How to Encode AAC with qaac</a></strong>  </li>
+<li><strong><a href="../encode-ac3-soundforge/">How to Encode AC3 with Sound Forge</a></strong>  </li>
+<li><strong><a href="../audio-bitdepth-sample-rate/">Bit-Depth Reduction &amp; Sample Rate Conversion</a></strong>  </li>
+<li><strong><a href="../convert_lossless_audio/">Converting Lossless Audio Formats (eac3to)</a></strong>  </li>
+</ul>
+<hr />
+<h2 id="additional-rules-notes">Additional Rules &amp; Notes<a class="headerlink" href="#additional-rules-notes" title="Permanent link">&para;</a></h2>
+<ul>
+<li>LPCM must <strong>never</strong> be used in encodes or remuxes  </li>
+<li>LPCM 1.0/2.0 → FLAC  </li>
+<li>
+<p>LPCM &gt; 2.0 → FLAC / DTS-HD MA / TrueHD</p>
+</li>
+<li>
+<p>TrueHD audio <strong>must include</strong> the AC3 core for compatibility</p>
+</li>
+<li>
+<p>Lossy → Lossy transcoding allowed <strong>only in exceptional cases</strong>, such as:</p>
+</li>
+<li>No other source exists  </li>
+<li>Syncing audio from another source  </li>
+<li>Framerate restoration  </li>
+<li>
+<p>Fixing major playback issues  </p>
+</li>
+<li>
+<p>Non-standard formats like &gt;2.0 Opus/AAC allowed only for:</p>
+</li>
+<li>1080p HDR encodes  </li>
+<li>10-bit x264 animation encodes  </li>
+</ul>
+<hr />
+<h2 id="credits">Credits<a class="headerlink" href="#credits" title="Permanent link">&para;</a></h2>
+<p>This guide is based on community standards and documentation from <strong>(PTP)</strong>.<br />
+Huge thanks to their contributors for maintaining consistent encoding expectations.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../DV-encode/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Dolby Vision">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Dolby Vision
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../audio-bitdepth-sample-rate/" class="md-footer__link md-footer__link--next" aria-label="Next: Bit-depth Reduction &amp; Sample Rate Conversion">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Bit-depth Reduction & Sample Rate Conversion
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy", "navigation.tracking", "navigation.footer", "search.suggest", "search.highlight", "content.image.zoom"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../assets/custom.js"></script>
+      
+    
+  </body>
+</html>

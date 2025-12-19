@@ -1,0 +1,1134 @@
+/* ---------------------------------------------------------
+   Kitsune Dark OLED Theme with Pink Accents
+   ---------------------------------------------------------- */
+
+/* Brand colors - All pink derived from #F4AACA */
+:root {
+    --kitsune-pink: #F4AACA;
+    --kitsune-pink-strong: #F4AACA;  /* Same pink, brightness handled via filter */
+    --kitsune-pink-dim: #F4AACA;     /* Same pink, opacity handled contextually */
+    --kitsune-bg: #000000;           /* True OLED black */
+    --kitsune-bg-elevated: #0d0d0d;  /* Slightly elevated surfaces */
+    --kitsune-bg-card: #121212;      /* Cards, sidebars */
+    --kitsune-bg-code: #1a1a1a;      /* Code blocks */
+    --kitsune-border: rgba(244, 170, 202, 0.15);
+    --kitsune-border-strong: rgba(244, 170, 202, 0.3);
+    --kitsune-text: #e8e8e8;
+    --kitsune-text-dim: #a0a0a0;
+}
+
+/* Override Material primary color variables globally */
+:root,
+[data-md-color-scheme="slate"] {
+    --md-primary-fg-color: #000000 !important;
+    --md-primary-bg-color: #000000 !important;
+    --md-accent-fg-color: #000000 !important;
+    --md-default-bg-color: #000000 !important;
+    --md-default-fg-color: #e8e8e8 !important;
+    --md-default-fg-color--light: #a0a0a0 !important;
+    --md-default-fg-color--lighter: #666666 !important;
+    --md-typeset-color: #e8e8e8 !important;
+    --md-typeset-a-color: #F4AACA !important;
+}
+
+/* ---------------------------------------------------------
+   GLOBAL LAYOUT
+   ---------------------------------------------------------- */
+
+html, body {
+    background-color: var(--kitsune-bg) !important;
+}
+
+/* Main content area */
+.md-main {
+    background-color: var(--kitsune-bg) !important;
+}
+
+.md-main__inner {
+    background-color: var(--kitsune-bg) !important;
+}
+
+/* Content container */
+.md-content {
+    background-color: var(--kitsune-bg) !important;
+}
+
+.md-content__inner {
+    background-color: var(--kitsune-bg) !important;
+}
+
+/* Expand max page width - fill more screen space */
+.md-grid {
+    max-width: 1800px;
+}
+
+/* Wider content area */
+.md-content__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 3rem;
+}
+
+/* Adjust sidebar widths for wider layout */
+@media screen and (min-width: 76.25em) {
+    .md-sidebar--primary {
+        width: 12.1rem;
+    }
+
+    .md-sidebar--secondary {
+        width: 12.1rem;
+    }
+}
+
+/* Even wider on very large screens */
+@media screen and (min-width: 100em) {
+    .md-grid {
+        max-width: 2000px;
+    }
+
+    .md-content__inner {
+        max-width: 1400px;
+    }
+}
+
+/* Text readability */
+.md-typeset {
+    color: var(--kitsune-text) !important;
+    word-break: break-word;
+}
+
+.md-typeset p {
+    line-height: 1.7;
+    font-size: 0.92rem;
+    color: var(--kitsune-text);
+}
+
+/* ---------------------------------------------------------
+   HEADINGS
+   ---------------------------------------------------------- */
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--kitsune-text) !important;
+}
+
+.md-typeset h1 {
+    color: var(--kitsune-pink) !important;
+    border-bottom: 1px solid var(--kitsune-border);
+    padding-bottom: 0.4em;
+}
+
+.md-typeset h2 {
+    margin-top: 1.6em;
+    color: var(--kitsune-pink-dim) !important;
+}
+
+.md-typeset h3 {
+    margin-top: 1.3em;
+}
+
+/* ---------------------------------------------------------
+   LINKS
+   ---------------------------------------------------------- */
+
+.md-typeset a {
+    color: var(--kitsune-pink) !important;
+    text-decoration: none;
+    transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.md-typeset a:hover {
+    color: var(--kitsune-pink-strong) !important;
+    opacity: 1;
+}
+
+/* Permalinks (#) */
+.md-typeset a.headerlink {
+    color: rgba(244, 170, 202, 0.3) !important;
+}
+
+.md-typeset a.headerlink:hover {
+    color: var(--kitsune-pink) !important;
+}
+
+/* ---------------------------------------------------------
+   CODE BLOCKS + INLINE CODE
+   ---------------------------------------------------------- */
+
+.md-typeset pre {
+    background-color: var(--kitsune-bg-code) !important;
+    border: 1px solid var(--kitsune-border);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.md-typeset pre code {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    background: transparent !important;
+}
+
+/* Inline code */
+.md-typeset code {
+    background: rgba(244, 170, 202, 0.1) !important;
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: #ffcf7d;
+    font-size: 0.88em;
+    border: 1px solid rgba(244, 170, 202, 0.1);
+}
+
+/* Code in links should inherit link color */
+.md-typeset a code {
+    color: var(--kitsune-pink) !important;
+}
+
+/* ---------------------------------------------------------
+   TABLES
+   ---------------------------------------------------------- */
+
+.md-typeset table {
+    font-size: 0.9rem;
+    background: var(--kitsune-bg-elevated);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--kitsune-border);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.md-typeset table th {
+    background: rgba(244, 170, 202, 0.08) !important;
+    color: var(--kitsune-pink) !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.03em;
+}
+
+.md-typeset table td,
+.md-typeset table th {
+    border-color: var(--kitsune-border) !important;
+    padding: 10px 14px;
+}
+
+.md-typeset table tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.md-typeset table tr:hover {
+    background: rgba(244, 170, 202, 0.05);
+}
+
+/* ---------------------------------------------------------
+   TABS
+   ---------------------------------------------------------- */
+
+.md-typeset .tabbed-set > label {
+    font-size: 0.85rem;
+    padding: 8px 14px;
+    color: var(--kitsune-text-dim);
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.md-typeset .tabbed-set > label:hover {
+    color: var(--kitsune-pink);
+}
+
+.md-typeset .tabbed-set > input:checked + label {
+    color: var(--kitsune-pink) !important;
+    border-bottom-color: var(--kitsune-pink) !important;
+}
+
+.md-typeset .tabbed-set .tabbed-content {
+    background: var(--kitsune-bg-elevated);
+    border-radius: 0 0 8px 8px;
+    padding: 16px;
+    border: 1px solid var(--kitsune-border);
+    border-top: none;
+}
+
+/* ---------------------------------------------------------
+   ADMONITIONS
+   ---------------------------------------------------------- */
+
+.md-typeset .admonition,
+.md-typeset details {
+    border-radius: 8px;
+    padding: 0;
+    background: var(--kitsune-bg-elevated) !important;
+    border: 1px solid var(--kitsune-border);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.md-typeset .admonition-title,
+.md-typeset details summary {
+    background: rgba(244, 170, 202, 0.08) !important;
+    padding: 0.6em 1.2em 0.6em 1.8em !important;
+    font-weight: 600;
+    display: flex !important;
+    align-items: center !important;
+    line-height: 1.3 !important;
+}
+
+/* Fix icon/logo spacing in admonition titles - flexbox alignment */
+.md-typeset .admonition-title::before,
+.md-typeset details summary::before {
+    margin-top: 0 !important;
+    align-self: center !important;
+    margin-right: 0.5em !important;
+    flex-shrink: 0 !important;
+}
+
+.md-typeset .admonition > *:not(.admonition-title),
+.md-typeset details > *:not(summary) {
+    padding: 0 1em;
+}
+
+/* Abstract/summary admonition - pink theme */
+.md-typeset .admonition.abstract,
+.md-typeset details.abstract {
+    border-left: 4px solid var(--kitsune-pink);
+}
+
+.md-typeset .admonition.abstract > .admonition-title {
+    background: rgba(244, 170, 202, 0.12) !important;
+}
+
+/* Tip admonition */
+.md-typeset .admonition.tip {
+    border-left: 4px solid #4caf50;
+}
+
+/* Warning admonition */
+.md-typeset .admonition.warning {
+    border-left: 4px solid #ff9800;
+}
+
+/* Danger admonition */
+.md-typeset .admonition.danger {
+    border-left: 4px solid #f44336;
+}
+
+/* Note admonition */
+.md-typeset .admonition.note {
+    border-left: 4px solid #2196f3;
+}
+
+/* Success admonition */
+.md-typeset .admonition.success {
+    border-left: 4px solid #4caf50;
+}
+
+/* Example admonition */
+.md-typeset .admonition.example {
+    border-left: 4px solid #9c27b0;
+}
+
+/* ---------------------------------------------------------
+   IMAGES
+   ---------------------------------------------------------- */
+
+.md-typeset img {
+    display: block;
+    margin: 1.4em auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--kitsune-border);
+}
+
+/* ---------------------------------------------------------
+   HEADER
+   ---------------------------------------------------------- */
+
+.md-header {
+    background-color: var(--kitsune-bg) !important;
+    border-bottom: 1px solid var(--kitsune-border);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.md-header__title {
+    color: var(--kitsune-pink) !important;
+    font-weight: 600;
+}
+
+/* Logo visibility on dark background - EXACT match to mobile */
+.md-header__button.md-logo,
+.md-header__button.md-logo img,
+.md-header .md-logo,
+.md-header .md-logo img,
+.md-logo,
+.md-logo img {
+    filter: brightness(1.8) drop-shadow(0 0 8px #F4AACA) drop-shadow(0 0 16px #F4AACA) !important;
+    transition: filter 0.3s ease;
+}
+
+.md-header__button.md-logo:hover,
+.md-header__button.md-logo:hover img,
+.md-header .md-logo:hover,
+.md-header .md-logo:hover img,
+.md-logo:hover,
+.md-logo:hover img {
+    filter: brightness(2.2) drop-shadow(0 0 12px #F4AACA) drop-shadow(0 0 24px #F4AACA) !important;
+}
+
+/* Desktop header icon next to logo */
+.md-header .md-header__button.md-logo .md-icon,
+.md-header .md-logo .md-icon {
+    filter: brightness(1.8) drop-shadow(0 0 8px #F4AACA) drop-shadow(0 0 16px #F4AACA) !important;
+}
+
+/* Header icons - force exact pink color */
+.md-header__button.md-icon,
+.md-header__button.md-icon svg,
+.md-header .md-icon,
+.md-header .md-icon svg,
+.md-header__button svg {
+    color: #F4AACA !important;
+    fill: #F4AACA !important;
+}
+
+.md-header__button.md-icon:hover,
+.md-header__button.md-icon:hover svg,
+.md-header .md-icon:hover,
+.md-header .md-icon:hover svg {
+    color: #F4AACA !important;
+    fill: #F4AACA !important;
+    filter: brightness(1.2) !important;
+}
+
+/* Search bar */
+.md-search__input {
+    background-color: var(--kitsune-bg-card) !important;
+    color: var(--kitsune-text) !important;
+    border: 1px solid var(--kitsune-border);
+}
+
+.md-search__input::placeholder {
+    color: var(--kitsune-text-dim) !important;
+}
+
+/* ---------------------------------------------------------
+   LEFT SIDEBAR (Navigation)
+   ---------------------------------------------------------- */
+
+.md-sidebar--primary {
+    background-color: var(--kitsune-bg) !important;
+}
+
+.md-sidebar__scrollwrap {
+    background-color: var(--kitsune-bg) !important;
+}
+
+.md-nav__link {
+    color: var(--kitsune-text-dim) !important;
+    transition: color 0.2s ease;
+}
+
+.md-nav__link:hover {
+    color: var(--kitsune-pink) !important;
+}
+
+.md-nav__link--active,
+.md-nav__item--active > .md-nav__link {
+    color: var(--kitsune-pink) !important;
+    font-weight: 500;
+}
+
+/* Section headers in nav */
+.md-nav__title {
+    color: var(--kitsune-text) !important;
+    font-weight: 600;
+}
+
+/* ---------------------------------------------------------
+   RIGHT SIDEBAR (Table of Contents)
+   ---------------------------------------------------------- */
+
+.md-sidebar--secondary {
+    background-color: var(--kitsune-bg) !important;
+    border-left: 1px solid var(--kitsune-border);
+}
+
+.md-sidebar--secondary .md-nav__link {
+    font-size: 0.82rem;
+    padding: 4px 0;
+    color: var(--kitsune-text-dim) !important;
+}
+
+.md-sidebar--secondary .md-nav__link:hover {
+    color: var(--kitsune-pink) !important;
+}
+
+.md-sidebar--secondary .md-nav__item--active > .md-nav__link {
+    color: var(--kitsune-pink-strong) !important;
+    font-weight: 500;
+}
+
+/* TOC title */
+.md-nav__title[for="__toc"] {
+    color: var(--kitsune-pink-dim) !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+}
+
+/* ---------------------------------------------------------
+   MOBILE DRAWER
+   ---------------------------------------------------------- */
+
+/* Mobile drawer background */
+.md-nav--primary .md-nav__title,
+.md-nav--primary .md-nav__title::before {
+    background-color: #000000 !important;
+    color: #F4AACA !important;
+}
+
+.md-nav--primary {
+    background-color: #000000 !important;
+}
+
+.md-nav__title[for="__drawer"] {
+    background-color: #000000 !important;
+    color: #F4AACA !important;
+}
+
+.md-drawer {
+    background-color: #000000 !important;
+}
+
+/* Mobile drawer header with logo - "Kitsune Starter Guide" title area */
+.md-nav--primary .md-nav__title[for="__drawer"] {
+    background-color: #000000 !important;
+    color: #F4AACA !important;
+}
+
+.md-nav--primary .md-nav__title .md-nav__icon,
+.md-nav--primary .md-nav__title .md-logo,
+.md-nav--primary .md-nav__title .md-logo img {
+    filter: brightness(1.8) drop-shadow(0 0 8px #F4AACA) drop-shadow(0 0 16px #F4AACA) !important;
+}
+
+/* Force the entire mobile nav title bar background to black */
+.md-nav--lifted > .md-nav__list > .md-nav__item--active > .md-nav__link,
+.md-nav--primary .md-nav__title ~ .md-nav__list,
+.md-nav--primary > .md-nav__title {
+    background-color: #000000 !important;
+}
+
+/* Mobile nav source */
+.md-nav__source,
+.md-nav__source .md-nav__title,
+.md-nav__source .md-nav__title::before {
+    background-color: var(--kitsune-bg) !important;
+    color: #F4AACA !important;
+}
+
+/* Mobile header icons - hamburger menu, search, etc */
+.md-header .md-header__button,
+.md-header .md-header__button svg,
+.md-header .md-header__button path,
+.md-header__button[for="__drawer"],
+.md-header__button[for="__drawer"] svg,
+.md-header__button[for="__search"],
+.md-header__button[for="__search"] svg,
+.md-toggle__label,
+.md-toggle__label svg {
+    color: #F4AACA !important;
+    fill: currentColor !important;
+}
+
+/* Force SVG paths in header to use pink */
+.md-header svg path {
+    fill: #F4AACA !important;
+}
+
+/* Mobile back arrow and navigation icons */
+.md-nav__icon,
+.md-nav__icon svg,
+.md-nav__button,
+.md-nav__button svg {
+    color: #F4AACA !important;
+    fill: #F4AACA !important;
+}
+
+/* AGGRESSIVE: Target ALL icons everywhere with pink */
+[class*="md-"] svg,
+[class*="md-"] svg path,
+.md-icon svg,
+.md-icon svg path,
+label[for] svg,
+label[for] svg path {
+    color: #F4AACA !important;
+    fill: #F4AACA !important;
+}
+
+/* Specifically target the hamburger/menu toggle */
+label[for="__drawer"] svg,
+label[for="__drawer"] svg path,
+.md-header__button.md-icon svg,
+.md-header__button.md-icon svg path {
+    color: #F4AACA !important;
+    fill: #F4AACA !important;
+    stroke: #F4AACA !important;
+    border-color: transparent !important;
+}
+
+/* ---------------------------------------------------------
+   FOOTER
+   ---------------------------------------------------------- */
+
+.md-footer {
+    background-color: var(--kitsune-bg) !important;
+    border-top: 1px solid var(--kitsune-border);
+}
+
+.md-footer__link {
+    color: var(--kitsune-text-dim) !important;
+}
+
+.md-footer__link:hover {
+    color: var(--kitsune-pink) !important;
+}
+
+.md-footer-meta {
+    background-color: var(--kitsune-bg) !important;
+}
+
+/* ---------------------------------------------------------
+   SCROLLBAR (Webkit)
+   ---------------------------------------------------------- */
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--kitsune-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(244, 170, 202, 0.3);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--kitsune-pink-dim);
+}
+
+/* ---------------------------------------------------------
+   SELECTION HIGHLIGHT
+   ---------------------------------------------------------- */
+
+::selection {
+    background: rgba(244, 170, 202, 0.3);
+    color: var(--kitsune-text);
+}
+
+::-moz-selection {
+    background: rgba(244, 170, 202, 0.3);
+    color: var(--kitsune-text);
+}
+
+/* ---------------------------------------------------------
+   HORIZONTAL RULES
+   ---------------------------------------------------------- */
+
+.md-typeset hr {
+    border-color: var(--kitsune-border);
+    margin: 2em 0;
+}
+
+/* ---------------------------------------------------------
+   LISTS
+   ---------------------------------------------------------- */
+
+.md-typeset ul,
+.md-typeset ol {
+    color: var(--kitsune-text);
+}
+
+.md-typeset li {
+    margin-bottom: 0.3em;
+}
+
+/* Custom bullet color */
+.md-typeset ul > li::marker {
+    color: var(--kitsune-pink-dim);
+}
+
+.md-typeset ol > li::marker {
+    color: var(--kitsune-pink-dim);
+}
+
+/* ---------------------------------------------------------
+   BLOCKQUOTES
+   ---------------------------------------------------------- */
+
+.md-typeset blockquote {
+    border-left: 4px solid var(--kitsune-pink);
+    background: var(--kitsune-bg-elevated);
+    padding: 1em 1.5em;
+    margin: 1em 0;
+    border-radius: 0 8px 8px 0;
+    color: var(--kitsune-text-dim);
+}
+
+/* ---------------------------------------------------------
+   DEFINITION LISTS
+   ---------------------------------------------------------- */
+
+.md-typeset dt {
+    color: var(--kitsune-pink) !important;
+    font-weight: 600;
+}
+
+.md-typeset dd {
+    color: var(--kitsune-text);
+}
+
+/* ---------------------------------------------------------
+   KEYBOARD KEYS
+   ---------------------------------------------------------- */
+
+.md-typeset kbd {
+    background: var(--kitsune-bg-card);
+    border: 1px solid var(--kitsune-border-strong);
+    border-radius: 4px;
+    box-shadow: 0 2px 0 rgba(244, 170, 202, 0.2);
+    color: var(--kitsune-pink);
+    padding: 2px 6px;
+    font-size: 0.85em;
+}
+
+/* ---------------------------------------------------------
+   MARK/HIGHLIGHT
+   ---------------------------------------------------------- */
+
+.md-typeset mark {
+    background: rgba(244, 170, 202, 0.3);
+    color: var(--kitsune-text);
+    padding: 1px 4px;
+    border-radius: 3px;
+}
+
+/* ---------------------------------------------------------
+   CLEAN EMBED — NO BOX, NO TABLE LOOK, DARK THEME
+   ---------------------------------------------------------- */
+
+/* Strip Material styling */
+.gist .markdown-body {
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Remove wrapper styling (make it blend into page) */
+.tier-embed,
+.gist {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+
+/* Apply dark theme text colors */
+.gist *,
+.gist .blob-code,
+.gist .blob-num,
+.gist .highlight {
+    background: transparent !important;
+    color: var(--kitsune-text) !important;
+}
+
+/* Prevent overflow from ruining layout */
+.gist .blob-wrapper {
+    overflow-x: auto !important;
+}
+
+/* Hide "Table of contents generated with markdown-toc" from imported gists */
+.gist p:last-of-type {
+    display: none !important;
+}
+
+/* ---------------------------------------------------------
+   CODE COPY BUTTON & CLIPBOARD NOTIFICATION
+   ---------------------------------------------------------- */
+
+/* Copy button styling */
+.md-clipboard {
+    color: var(--kitsune-text-dim) !important;
+}
+
+.md-clipboard:hover {
+    color: var(--kitsune-pink) !important;
+}
+
+/* Clipboard notification message - "Copied to clipboard" */
+/* Outer dialog - make transparent, no border */
+.md-dialog[data-md-component="dialog"] {
+    background-color: transparent !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Inner dialog - this is the actual notification box */
+/* Note: JavaScript in custom.js handles dynamic styling to override Material defaults */
+.md-dialog[data-md-component="dialog"] .md-dialog__inner,
+.md-dialog__inner.md-typeset {
+    background-color: var(--kitsune-bg-card) !important;
+    background: var(--kitsune-bg-card) !important;
+    color: var(--kitsune-pink) !important;
+    border: 1px solid var(--kitsune-border) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+    border-radius: 6px !important;
+    text-align: center !important;
+    padding: 0.6em 1.2em !important;
+}
+
+/* IMAGE COMPARISON VIEWER (Mouse-Move Switch) */
+
+.img-compare {
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    margin: 2rem auto;
+    overflow: hidden;
+    cursor: ew-resize;
+}
+
+.img-compare img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    opacity: 0;
+    transition: opacity 0.25s ease-in-out;
+    user-select: none;
+    pointer-events: none;
+}
+
+/* visible frame */
+.img-compare img.active {
+    opacity: 1;
+    position: relative;
+}
+
+/* ---------------------------------------------------------
+   BBCODE COMPARISON SCENES (Mouse slider + keyboard)
+   Each scene is a slider comparing different sources
+   ---------------------------------------------------------- */
+
+.comparison-container {
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    margin: 2rem auto;
+}
+
+.comparison-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem 0;
+}
+
+.comparison-controls label {
+    color: var(--kitsune-text);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.comparison-scene-select {
+    background: var(--kitsune-bg-elevated);
+    border: 1px solid var(--kitsune-border);
+    border-radius: 6px;
+    color: var(--kitsune-text);
+    padding: 0.5em 1em;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.comparison-scene-select:hover {
+    border-color: var(--kitsune-pink);
+}
+
+.comparison-scene-select:focus {
+    outline: none;
+    border-color: var(--kitsune-pink);
+    box-shadow: 0 0 0 2px rgba(244, 170, 202, 0.2);
+}
+
+.comparison-scenes-wrapper {
+    position: relative;
+    min-height: 400px;
+}
+
+.comparison-scene {
+    position: relative;
+    width: 100%;
+    cursor: ew-resize;
+    outline: none;
+    display: none;
+}
+
+.comparison-scene.active {
+    display: block;
+}
+
+.comparison-scene.active:focus {
+    outline: 2px solid var(--kitsune-pink);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+.comparison-label-bar {
+    position: relative;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    padding: 0.6em 1em;
+    text-align: center;
+    border-radius: 0;
+    pointer-events: none;
+    z-index: 1;
+    margin-bottom: 0;
+}
+
+.comparison-label-indicator {
+    color: var(--kitsune-pink);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.comparison-slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 0;
+    border: 1px solid var(--kitsune-border);
+    background: var(--kitsune-bg-code);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.comparison-slider img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    user-select: none;
+    pointer-events: none;
+    display: block;
+    border-radius: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+}
+
+.comparison-slider img:first-child {
+    position: relative;
+    opacity: 0;
+}
+
+.comparison-slider img.active {
+    opacity: 1;
+}
+
+.comparison-slider img:first-child.active {
+    position: relative;
+    opacity: 1;
+}
+
+.comparison-slider img:not(:first-child).active {
+    position: absolute;
+    z-index: 1;
+}
+
+/* Fullscreen mode */
+.comparison-scene.fullscreen {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw !important;
+    height: 100vh;
+    max-width: 100vw !important;
+    margin: 0 !important;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.95);
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    cursor: ew-resize;
+}
+
+.comparison-scene.fullscreen .comparison-label-bar {
+    border-radius: 0;
+    background: rgba(0, 0, 0, 0.85);
+    font-size: 1.2rem;
+    padding: 0.8em 1.2em;
+    width: 100%;
+    max-width: 95vw;
+    margin: 0 auto 0 auto;
+    flex-shrink: 0;
+}
+
+.comparison-scene.fullscreen .comparison-slider {
+    width: 100%;
+    max-width: 95vw;
+    height: auto;
+    max-height: calc(100vh - 180px);
+    border-radius: 0;
+    flex: 1 1 auto;
+    overflow: hidden;
+    margin: 0 auto;
+    position: relative;
+    display: block;
+}
+
+.comparison-scene.fullscreen .comparison-slider img {
+    max-height: calc(100vh - 180px);
+    max-width: 95vw;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+}
+
+.comparison-scene.fullscreen .comparison-slider img:first-child {
+    position: relative;
+}
+
+.comparison-scene.fullscreen .comparison-slider img:first-child.active {
+    position: relative;
+}
+
+.comparison-scene.fullscreen .comparison-slider img:not(:first-child) {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.comparison-scene.fullscreen .comparison-slider img:not(:first-child).active {
+    position: absolute;
+    z-index: 1;
+}
+
+/* Hint text for fullscreen */
+.comparison-scene.fullscreen::after {
+    content: "Press ESC or Ctrl+F to exit • ← → to navigate images • ↑ ↓ to change scene";
+    position: absolute;
+    bottom: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--kitsune-text-dim);
+    font-size: 0.75rem;
+    text-align: center;
+    pointer-events: none;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 0.4em 0.8em;
+    border-radius: 4px;
+    z-index: 10000;
+    max-width: 90vw;
+    line-height: 1.4;
+}
+
+/* Mobile navigation buttons */
+.mobile-nav-button {
+    display: none !important;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    border: 2px solid var(--kitsune-pink);
+    border-radius: 50%;
+    color: var(--kitsune-pink);
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 20;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.mobile-nav-button:hover,
+.mobile-nav-button:active {
+    background: rgba(244, 170, 202, 0.2);
+    border-color: var(--kitsune-pink-strong);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.mobile-nav-button-prev {
+    left: 10px;
+}
+
+.mobile-nav-button-next {
+    right: 10px;
+}
+
+/* Show mobile buttons ONLY on touch devices and small screens */
+@media (hover: none) and (pointer: coarse) {
+    .mobile-nav-button {
+        display: flex !important;
+    }
+}
+
+/* Also show on smaller screens (mobile devices) */
+@media (max-width: 768px) and (hover: none) {
+    .mobile-nav-button {
+        display: flex !important;
+    }
+}
+
+/* Hide on desktop/large screens with mouse */
+@media (min-width: 769px) and (hover: hover) {
+    .mobile-nav-button {
+        display: none !important;
+    }
+}
+
+/* Fullscreen mobile buttons */
+.comparison-scene.fullscreen .mobile-nav-button {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+}
+
+.comparison-scene.fullscreen .mobile-nav-button-prev {
+    left: 20px;
+}
+
+.comparison-scene.fullscreen .mobile-nav-button-next {
+    right: 20px;
+}
+

@@ -1,0 +1,4687 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://0.0.0.0:8000/Beginners-encode/">
+      
+      
+        <link rel="prev" href="../introduction-encode/">
+      
+      
+        <link rel="next" href="../source-encode/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Beginners Guide to Video Encoding - Kitsune Starter Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        
+        <style type="text/css">@font-face {font-family:Roboto;font-style:normal;font-weight:300;src:url(/cf-fonts/s/roboto/5.0.11/cyrillic/300/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:300;src:url(/cf-fonts/s/roboto/5.0.11/greek/300/normal.woff2);unicode-range:U+0370-03FF;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:300;src:url(/cf-fonts/s/roboto/5.0.11/cyrillic-ext/300/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:300;src:url(/cf-fonts/s/roboto/5.0.11/greek-ext/300/normal.woff2);unicode-range:U+1F00-1FFF;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:300;src:url(/cf-fonts/s/roboto/5.0.11/latin/300/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:300;src:url(/cf-fonts/s/roboto/5.0.11/latin-ext/300/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:300;src:url(/cf-fonts/s/roboto/5.0.11/vietnamese/300/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:300;src:url(/cf-fonts/s/roboto/5.0.11/latin/300/italic.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:300;src:url(/cf-fonts/s/roboto/5.0.11/cyrillic/300/italic.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:300;src:url(/cf-fonts/s/roboto/5.0.11/latin-ext/300/italic.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:300;src:url(/cf-fonts/s/roboto/5.0.11/cyrillic-ext/300/italic.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:300;src:url(/cf-fonts/s/roboto/5.0.11/greek-ext/300/italic.woff2);unicode-range:U+1F00-1FFF;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:300;src:url(/cf-fonts/s/roboto/5.0.11/vietnamese/300/italic.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:300;src:url(/cf-fonts/s/roboto/5.0.11/greek/300/italic.woff2);unicode-range:U+0370-03FF;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/latin-ext/400/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/cyrillic/400/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/vietnamese/400/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/greek/400/normal.woff2);unicode-range:U+0370-03FF;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/greek-ext/400/normal.woff2);unicode-range:U+1F00-1FFF;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/cyrillic-ext/400/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/latin/400/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/latin/400/italic.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/vietnamese/400/italic.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/cyrillic/400/italic.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/cyrillic-ext/400/italic.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/latin-ext/400/italic.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/greek-ext/400/italic.woff2);unicode-range:U+1F00-1FFF;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/greek/400/italic.woff2);unicode-range:U+0370-03FF;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/cyrillic/700/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/greek/700/normal.woff2);unicode-range:U+0370-03FF;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/latin/700/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/vietnamese/700/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/cyrillic-ext/700/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/latin-ext/700/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:fallback;}@font-face {font-family:Roboto;font-style:normal;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/greek-ext/700/normal.woff2);unicode-range:U+1F00-1FFF;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/cyrillic/700/italic.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/greek/700/italic.woff2);unicode-range:U+0370-03FF;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/greek-ext/700/italic.woff2);unicode-range:U+1F00-1FFF;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/latin-ext/700/italic.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/vietnamese/700/italic.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/latin/700/italic.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:fallback;}@font-face {font-family:Roboto;font-style:italic;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/cyrillic-ext/700/italic.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto-mono/5.0.16/greek/400/normal.woff2);unicode-range:U+0370-03FF;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto-mono/5.0.16/latin/400/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto-mono/5.0.16/latin-ext/400/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto-mono/5.0.16/vietnamese/400/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto-mono/5.0.16/cyrillic/400/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto-mono/5.0.16/cyrillic-ext/400/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:italic;font-weight:400;src:url(/cf-fonts/s/roboto-mono/5.0.16/cyrillic/400/italic.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:italic;font-weight:400;src:url(/cf-fonts/s/roboto-mono/5.0.16/latin-ext/400/italic.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:italic;font-weight:400;src:url(/cf-fonts/s/roboto-mono/5.0.16/latin/400/italic.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:italic;font-weight:400;src:url(/cf-fonts/s/roboto-mono/5.0.16/cyrillic-ext/400/italic.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:italic;font-weight:400;src:url(/cf-fonts/s/roboto-mono/5.0.16/vietnamese/400/italic.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:italic;font-weight:400;src:url(/cf-fonts/s/roboto-mono/5.0.16/greek/400/italic.woff2);unicode-range:U+0370-03FF;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:normal;font-weight:700;src:url(/cf-fonts/s/roboto-mono/5.0.16/cyrillic/700/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:normal;font-weight:700;src:url(/cf-fonts/s/roboto-mono/5.0.16/latin/700/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:normal;font-weight:700;src:url(/cf-fonts/s/roboto-mono/5.0.16/greek/700/normal.woff2);unicode-range:U+0370-03FF;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:normal;font-weight:700;src:url(/cf-fonts/s/roboto-mono/5.0.16/cyrillic-ext/700/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:normal;font-weight:700;src:url(/cf-fonts/s/roboto-mono/5.0.16/vietnamese/700/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:normal;font-weight:700;src:url(/cf-fonts/s/roboto-mono/5.0.16/latin-ext/700/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:italic;font-weight:700;src:url(/cf-fonts/s/roboto-mono/5.0.16/vietnamese/700/italic.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:italic;font-weight:700;src:url(/cf-fonts/s/roboto-mono/5.0.16/latin/700/italic.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:italic;font-weight:700;src:url(/cf-fonts/s/roboto-mono/5.0.16/latin-ext/700/italic.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:italic;font-weight:700;src:url(/cf-fonts/s/roboto-mono/5.0.16/cyrillic-ext/700/italic.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:italic;font-weight:700;src:url(/cf-fonts/s/roboto-mono/5.0.16/greek/700/italic.woff2);unicode-range:U+0370-03FF;font-display:fallback;}@font-face {font-family:Roboto Mono;font-style:italic;font-weight:700;src:url(/cf-fonts/s/roboto-mono/5.0.16/cyrillic/700/italic.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:fallback;}</style>
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/kitsune.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+
+  <!-- Preload logo -->
+  <link rel="preload" href="/assets/fox-logo.png" as="image">
+
+  <!-- Favicon Pack -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+  <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+
+  <!-- Correct Manifest (your real file) -->
+  <link rel="manifest" href="/assets/site.webmanifest">
+
+  <!-- Theme color -->
+  <meta name="theme-color" content="#F4AACA">
+
+  <!-- OpenGraph -->
+  <meta property="og:title" content="Kitsune Starter Guide">
+  <meta property="og:description" content="WEB-DL Handling • Cleanup • Automation • Best Practices">
+  <meta property="og:image" content="https://okami.icu/assets/social-card.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://0.0.0.0:8000/">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kitsune Starter Guide">
+  <meta name="twitter:description" content="WEB-DL Handling • Cleanup • Automation • Best Practices">
+  <meta name="twitter:image" content="https://okami.icu/assets/social-card.png">
+
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#staxrip-video-encoding-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Kitsune Starter Guide" class="md-header__button md-logo" aria-label="Kitsune Starter Guide" data-md-component="logo">
+      
+  <img src="/assets/fox-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Kitsune Starter Guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Beginners Guide to Video Encoding
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Kitsune Starter Guide" class="md-nav__button md-logo" aria-label="Kitsune Starter Guide" data-md-component="logo">
+      
+  <img src="/assets/fox-logo.png" alt="logo">
+
+    </a>
+    Kitsune Starter Guide
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    General Information
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    General Information
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../video_codecs_and_containers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video Codecs & Containers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../audio-codecs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audio Codecs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../subtitle-formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Subtitle Formats
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WEB-DL Handling Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    WEB-DL Handling Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basic
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Basic
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Web-DL-home/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how_to_find_content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How To Find Content
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mkvtoolnix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MKVToolNix Cleanup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mediainfo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MediaInfo Cleanup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../subtitles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Subtitles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapters-handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tv-ordering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TV Show Ordering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../streaming-services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Streaming Services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quality_breakdown/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quality Breakdown
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web-tier-list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Tier List
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../best-practices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Best Practices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Advanced
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../metadata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Metadata
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../syncing-subtitles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syncing Subtitles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../what_is_hdr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What Is HDR?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hybrid-web-dl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DV HDR Hybrid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../audio-syncing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audio Syncying
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lossless-cutting-merging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lossless Cutting & Merging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Crunchyroll-subtitles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Crunchyroll Subtitles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools & Scripts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tools & Scripts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scripts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Comparisons Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Comparisons Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../comp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../avisynth-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AviSynth+
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../avisynth-script/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AvsPmod Script
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vapoursynth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VapourSynth
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../audio-comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audio Comparison
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Encoding Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Encoding Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction-encode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Beginners Guide to Video Encoding
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Beginners Guide to Video Encoding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Getting Started
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Getting Started">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#first-launch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        First Launch
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-loading-source-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Loading Source Files
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Loading Source Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-loading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Loading
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working-with-mkv-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Working with MKV Files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working-with-blu-ray-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Working with Blu-ray Sources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working-with-dvd-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Working with DVD Sources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Output Directory
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-video-encoding-settings-x264" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Video Encoding Settings (x264)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Video Encoding Settings (x264)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recommended-base-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended Base Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-explanations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting Explanations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-audio-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Audio Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Audio Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#secondary-audio-tracks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Secondary Audio Tracks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#downmixing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Downmixing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#audio-filters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Audio Filters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-subtitle-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Subtitle Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Subtitle Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#embedded-subtitles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Embedded Subtitles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#external-subtitles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        External Subtitles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subtitle-synchronization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subtitle Synchronization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-language-subtitles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-Language Subtitles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subtitle-styling-assssa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subtitle Styling (ASS/SSA)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-aspect-ratio-corrections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Aspect Ratio Corrections
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Aspect Ratio Corrections">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#understanding-sar-dar-and-par" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Understanding SAR, DAR, and PAR
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-corrections-are-needed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When Corrections Are Needed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixing-aspect-ratio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fixing Aspect Ratio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cropping-vs-scaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cropping vs. Scaling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verification
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-filters-and-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Filters and Processing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Filters and Processing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#filter-chain-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Filter Chain Overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cropping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cropping
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resolution-adjustment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resolution Adjustment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#denoising" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Denoising
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debanding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debanding
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sharpening" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sharpening
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#color-correction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Color Correction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preview-and-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preview and Testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#saving-presets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Saving Presets
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-encoding-and-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Encoding and Output
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Encoding and Output">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#save-your-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Save Your Project
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#review-the-queue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Review the Queue
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start-encoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Start Encoding
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Performance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#encoding-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Encoding Time
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#final-muxing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Final Muxing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error Handling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#save-templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Save Templates
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-a-dgdecnv-setup-advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix A: DGDecNV Setup (Advanced)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Appendix A: DGDecNV Setup (Advanced)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-dgdecnv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is DGDecNV?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verification_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caveats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Caveats
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../source-encode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sourcing and Verifying Content
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DV-encode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dolby Vision
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audio
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Audio
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../audio-encoding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audio Encoding Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../audio-bitdepth-sample-rate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bit-depth Reduction & Sample Rate Conversion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../audio-encoding-deew/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dolby Encoding Engine (DEE/DEEW)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../encode-aac-qaac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AAC Encoding (qaac)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../encode-ac3-soundforge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AC3 Encoding (Sound Forge)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../handjob/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Handjob Encoding Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../external-encode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Other Guides
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blu-ray Disk Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Blu-ray Disk Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fulldisc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Demuxing Blu-ray Disks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    REMUX Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    REMUX Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DV-remux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dolby Vision Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../convert_lossless_audio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lossless Audio Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../collecting_subtitles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Collecting Subtitles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../remux_dvd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DVDs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_5" id="__nav_7_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Subtitles & OCR
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Subtitles & OCR
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../videosubfinder/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OCR from Hardsubs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../video-subtitle-extractor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OCR from Hardsubs (VSE)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SubExtractor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OCR from DVD/IDX-SUB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../positional_subtitles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Positional Subtitles (ASS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Getting Started
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Getting Started">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#first-launch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        First Launch
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-loading-source-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Loading Source Files
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Loading Source Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-loading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Loading
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working-with-mkv-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Working with MKV Files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working-with-blu-ray-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Working with Blu-ray Sources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working-with-dvd-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Working with DVD Sources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Output Directory
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-video-encoding-settings-x264" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Video Encoding Settings (x264)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Video Encoding Settings (x264)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recommended-base-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended Base Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-explanations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting Explanations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-audio-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Audio Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Audio Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#secondary-audio-tracks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Secondary Audio Tracks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#downmixing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Downmixing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#audio-filters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Audio Filters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-subtitle-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Subtitle Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Subtitle Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#embedded-subtitles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Embedded Subtitles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#external-subtitles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        External Subtitles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subtitle-synchronization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subtitle Synchronization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-language-subtitles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-Language Subtitles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subtitle-styling-assssa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subtitle Styling (ASS/SSA)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-aspect-ratio-corrections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Aspect Ratio Corrections
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Aspect Ratio Corrections">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#understanding-sar-dar-and-par" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Understanding SAR, DAR, and PAR
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-corrections-are-needed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When Corrections Are Needed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixing-aspect-ratio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fixing Aspect Ratio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cropping-vs-scaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cropping vs. Scaling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verification
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-filters-and-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Filters and Processing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Filters and Processing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#filter-chain-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Filter Chain Overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cropping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cropping
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resolution-adjustment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resolution Adjustment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#denoising" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Denoising
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debanding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debanding
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sharpening" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sharpening
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#color-correction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Color Correction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preview-and-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preview and Testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#saving-presets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Saving Presets
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-encoding-and-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Encoding and Output
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Encoding and Output">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#save-your-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Save Your Project
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#review-the-queue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Review the Queue
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start-encoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Start Encoding
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Performance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#encoding-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Encoding Time
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#final-muxing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Final Muxing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error Handling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#save-templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Save Templates
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-a-dgdecnv-setup-advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix A: DGDecNV Setup (Advanced)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Appendix A: DGDecNV Setup (Advanced)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-dgdecnv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is DGDecNV?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verification_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caveats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Caveats
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="staxrip-video-encoding-guide">StaxRip Video Encoding Guide<a class="headerlink" href="#staxrip-video-encoding-guide" title="Permanent link">&para;</a></h1>
+<p>Goal: encode video with <strong>StaxRip</strong> using optimized x264 settings, proper audio configuration, and professional workflows.</p>
+<div class="admonition abstract">
+<p class="admonition-title">What You'll Learn</p>
+<ul>
+<li><strong>Getting started:</strong> Installation and first launch setup</li>
+<li><strong>Source handling:</strong> Loading MKV, Blu-ray, and DVD sources</li>
+<li><strong>x264 settings:</strong> Recommended encoding parameters with explanations</li>
+<li><strong>Audio configuration:</strong> Bitrate and codec recommendations by resolution</li>
+<li><strong>Subtitles:</strong> Management, sync, and styling workflows</li>
+<li><strong>Filters:</strong> Cropping, denoising, debanding, and color correction</li>
+<li><strong>Output:</strong> Encoding, muxing, and quality verification</li>
+</ul>
+</div>
+<hr />
+<h2 id="1-getting-started">1. Getting Started<a class="headerlink" href="#1-getting-started" title="Permanent link">&para;</a></h2>
+<h3 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h3>
+<p>Download StaxRip from the official releases page. Choose either the installer (automated setup) or portable version (no installation required).</p>
+<p>➡️ <a href="https://github.com/staxrip/staxrip/releases">https://github.com/staxrip/staxrip/releases</a></p>
+<p>The first time you launch StaxRip, it will download additional dependencies including ffmpeg and <a href="../tools/#mkvtoolnix">MKVToolNix</a>. Allow these to install—they're required for encoding.</p>
+<h3 id="first-launch">First Launch<a class="headerlink" href="#first-launch" title="Permanent link">&para;</a></h3>
+<p>StaxRip may prompt you to download additional tools or updates on first run. Accept these—they provide core encoding functionality. Default settings are fine for now; you'll adjust them as needed throughout this guide.</p>
+<hr />
+<h2 id="2-loading-source-files">2. Loading Source Files<a class="headerlink" href="#2-loading-source-files" title="Permanent link">&para;</a></h2>
+<h3 id="basic-loading">Basic Loading<a class="headerlink" href="#basic-loading" title="Permanent link">&para;</a></h3>
+<p>Add source files by dragging them directly onto the StaxRip interface, or use <strong>Source → Open File</strong>. StaxRip handles:</p>
+<ul>
+<li>MKV, MP4, AVI containers</li>
+<li>Blu-ray folder structures</li>
+<li>DVD VIDEO_TS folders</li>
+<li>Raw video streams</li>
+</ul>
+<h3 id="working-with-mkv-files">Working with MKV Files<a class="headerlink" href="#working-with-mkv-files" title="Permanent link">&para;</a></h3>
+<p>MKV files load quickly without indexing. StaxRip automatically detects:
+- All video tracks (codec, resolution, bitrate)
+- Multiple audio tracks (languages, codecs, channel layouts)
+- Subtitle tracks (SRT, ASS, PGS)</p>
+<p>Select the tracks you want to keep in the <strong>Audio</strong> and <strong>Subtitles</strong> tabs. Use <strong>Preview</strong> to verify everything loads correctly. For batch processing, drag multiple MKVs into the window.</p>
+<h3 id="working-with-blu-ray-sources">Working with Blu-ray Sources<a class="headerlink" href="#working-with-blu-ray-sources" title="Permanent link">&para;</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Don't Load .m2ts Files Directly</p>
+<p>Blu-ray files cause indexing problems, bad seeking, filter issues, and audio desync.</p>
+</div>
+<p>Instead, prepare Blu-ray content first:</p>
+<p><strong>Option 1 - Remux with <a href="https://www.makemkv.com/">MakeMKV</a>:</strong>
+Creates an MKV container preserving all original tracks. Recommended for most users.</p>
+<p><strong>Option 2 - Demux with eac3to:</strong><br />
+Extracts individual video, audio, and subtitle streams. See the <a href="https://aither.cc/forums/topics/3810?page=1#post-31578">eac3to demux guide</a> for detailed instructions.</p>
+<h3 id="working-with-dvd-sources">Working with DVD Sources<a class="headerlink" href="#working-with-dvd-sources" title="Permanent link">&para;</a></h3>
+<p>DVDs use a <code>VIDEO_TS</code> folder structure containing <code>.vob</code> files and <code>.ifo</code> metadata. Use StaxRip or PGCEdit to identify the correct title (main movie vs. special features).</p>
+<p>StaxRip will automatically index DVD files when you load them. DVDs typically contain multiple audio tracks (AC3, DTS, MP2) and subtitle languages—select the ones you need in the appropriate tabs.</p>
+<h3 id="output-directory">Output Directory<a class="headerlink" href="#output-directory" title="Permanent link">&para;</a></h3>
+<p>By default, StaxRip outputs to the same directory as the source file. To change this: <strong>File → Settings → Directories</strong>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Organize Your Projects</p>
+<p>Create separate folders for each project to keep source files, intermediate files, and final outputs organized.</p>
+</div>
+<hr />
+<h2 id="3-video-encoding-settings-x264">3. Video Encoding Settings (x264)<a class="headerlink" href="#3-video-encoding-settings-x264" title="Permanent link">&para;</a></h2>
+<p>These settings are based on the Silent Aperture x264 Guide and balance quality, compression efficiency, and compatibility.</p>
+<h3 id="recommended-base-configuration">Recommended Base Configuration<a class="headerlink" href="#recommended-base-configuration" title="Permanent link">&para;</a></h3>
+<p>Copy and paste these settings as a starting point:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>--preset placebo
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>--level 41
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>--me umh
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>--merange 32
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>--rc-lookahead 250
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>--profile high
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>--crf 16
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>--deblock -3:-3
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>--qcomp 0.70
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>--aq-mode 3 --aq-strength 0.80
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>--psy-rd 1.00:0
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>--no-dct-decimate
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>--ref 16
+</code></pre></div>
+<h3 id="setting-explanations">Setting Explanations<a class="headerlink" href="#setting-explanations" title="Permanent link">&para;</a></h3>
+<p><strong>Preset:</strong> <code>--preset placebo</code><br />
+Uses the slowest encoding speed for maximum compression efficiency. We'll override settings that waste time without improving quality.</p>
+<p><strong>Level:</strong> <code>--level 41</code><br />
+For 1080p content. Use 5.1 or higher for 4K.</p>
+<p><strong>Motion Estimation:</strong> <code>--me umh --merange 32</code><br />
+Balanced algorithm for predicting object movement between frames. The extended range is required for high-resolution content.</p>
+<p><strong>Ratecontrol Lookahead:</strong> <code>--rc-lookahead 250</code><br />
+Analyzes 250 future frames before assigning bits. Reduces to ~60 on systems with limited memory.</p>
+<p><strong>Profile:</strong> <code>--profile high</code><br />
+Standard 8-bit encoding. Use <code>--profile high444</code> for 10-bit or 4:4:4 encodes.</p>
+<p><strong>CRF (Constant Rate Factor):</strong> <code>--crf 16</code><br />
+Maintains constant perceptual quality by adjusting bitrate dynamically. Range: 15.0-20.0. Lower = higher quality. Adjust based on your quality target.</p>
+<p><strong>Deblocking:</strong> <code>--deblock -3:-3</code><br />
+Reduces blockiness from compression. Avoid <code>0:0</code> except for animation. Only try <code>-4:-4</code> for specific content after testing.</p>
+<p><strong>Quantizer Curve Compression:</strong> <code>--qcomp 0.70</code><br />
+Balances bitrate between simple and complex scenes. Works with mbtree (enabled by default when rc-lookahead ≥ 40). Range: 0.70-0.85.</p>
+<p><strong>Adaptive Quantization:</strong> <code>--aq-mode 3 --aq-strength 0.80</code><br />
+Mode 3 biases toward dark scenes. Dynamically assigns bits within each frame. Strength range: 0.60-0.85.</p>
+<p><strong>Psychovisual Optimization:</strong> <code>--psy-rd 1.00:0</code><br />
+Enhances edge detail for perceived sharpness. Use <code>--psy-rd 0.60:0</code> for animation.</p>
+<p><strong>DCT Decimation:</strong> <code>--no-dct-decimate</code><br />
+Prevents dropping flat blocks that would reduce quality. Always disable.</p>
+<p><strong>Reference Frames:</strong> <code>--ref 16</code><br />
+Number of frames used for motion prediction. x264 adjusts automatically if necessary.</p>
+<h3 id="additional-options">Additional Options<a class="headerlink" href="#additional-options" title="Permanent link">&para;</a></h3>
+<p><strong>10-bit encoding:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>--output-depth 10
+</code></pre></div></p>
+<p><strong>4:4:4 color space:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>--output-csp i444
+</code></pre></div></p>
+<p><strong>Zones (scene-specific settings):</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>--zones 100,200,crf=15
+</code></pre></div></p>
+<p><strong>Two-pass encoding</strong> (only when targeting a strict bitrate):
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Pass 1: --pass 1 --bitrate 8500
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>Pass 2: --pass 2 --bitrate 8500
+</code></pre></div></p>
+<h3 id="testing">Testing<a class="headerlink" href="#testing" title="Permanent link">&para;</a></h3>
+<div class="admonition tip">
+<p class="admonition-title">Always Test First</p>
+<p>Before encoding a full file:</p>
+<ul>
+<li>Encode a 10-20 second test clip</li>
+<li>Test sharp scenes, dark scenes, and high-motion scenes</li>
+<li>Adjust CRF, deblock, or AQ settings based on results</li>
+</ul>
+</div>
+<hr />
+<h2 id="4-audio-configuration">4. Audio Configuration<a class="headerlink" href="#4-audio-configuration" title="Permanent link">&para;</a></h2>
+<p>Audio recommendations are based on source type, resolution, and channel layout.</p>
+<table>
+<thead>
+<tr>
+<th>Resolution</th>
+<th>Source Type</th>
+<th>Recommendation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>4K (2160p)</strong></td>
+<td>Lossless multi-channel (3.0-7.1)</td>
+<td>Passthrough (TrueHD, DTS-HD MA, LPCM, Atmos)</td>
+</tr>
+<tr>
+<td><strong>4K (2160p)</strong></td>
+<td>Lossless stereo/mono (1.0/2.0)</td>
+<td>FLAC at original bit depth (16/24-bit)</td>
+</tr>
+<tr>
+<td><strong>1080p</strong></td>
+<td>Lossless multi-channel (7.1)</td>
+<td>E-AC3 1280-1536 kbps</td>
+</tr>
+<tr>
+<td><strong>1080p</strong></td>
+<td>Lossless multi-channel (5.1)</td>
+<td>E-AC3 768-1024 kbps</td>
+</tr>
+<tr>
+<td><strong>1080p</strong></td>
+<td>Lossless stereo/mono (1.0/2.0)</td>
+<td>FLAC 16-bit</td>
+</tr>
+<tr>
+<td><strong>720p</strong></td>
+<td>Lossless multi-channel (3.0-7.1)</td>
+<td>AC3 640 kbps</td>
+</tr>
+<tr>
+<td><strong>720p</strong></td>
+<td>Lossless stereo/mono (1.0/2.0)</td>
+<td>AAC transparent bitrate</td>
+</tr>
+<tr>
+<td><strong>All</strong></td>
+<td>Lossy sources</td>
+<td>Passthrough</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition danger">
+<p class="admonition-title">Never Re-encode Lossy Audio</p>
+<p>Passthrough lossy sources. Re-encoding lossy→lossy causes significant quality loss.</p>
+</div>
+<h3 id="secondary-audio-tracks">Secondary Audio Tracks<a class="headerlink" href="#secondary-audio-tracks" title="Permanent link">&para;</a></h3>
+<p>Secondary tracks include commentaries, alternate languages, and isolated scores.</p>
+<p><strong>Lossless secondary tracks:</strong><br />
+Encode to AAC. Exception: passthrough isolated scores.</p>
+<p><strong>Lossy secondary tracks:</strong><br />
+Passthrough unless repair or sync is needed.</p>
+<p><strong>Multi-channel secondary tracks:</strong><br />
+Follow the same rules as primary audio.</p>
+<h3 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Avoid lossy→lossy re-encoding</li>
+<li>Use DEE (Dolby Encoding Engine) when available for Dolby formats</li>
+<li>Convert LPCM stereo/mono to FLAC</li>
+<li>Dither to 16-bit FLAC for stereo/mono</li>
+<li>Use higher bitrates for dynamic action content</li>
+<li>Use lower bitrates for quiet dialogue-heavy content</li>
+</ul>
+<h3 id="downmixing">Downmixing<a class="headerlink" href="#downmixing" title="Permanent link">&para;</a></h3>
+<p>Only downmix when necessary.</p>
+<p><strong>7.1 → 5.1:</strong> Acceptable for 1080p/720p encodes. Use DEE for clean downmixing.</p>
+<p><strong>Avoid:</strong> Downmixing to stereo causes major quality loss.</p>
+<h3 id="audio-filters">Audio Filters<a class="headerlink" href="#audio-filters" title="Permanent link">&para;</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Audio Filters Can Degrade Quality</p>
+<p>Only use audio filters if you understand their purpose.</p>
+<ul>
+<li><strong>Normalize:</strong> Balances volume but may reduce dynamic range</li>
+<li><strong>Dynamic Range Compression:</strong> Makes quiet scenes louder—avoid unless needed</li>
+</ul>
+<p>When in doubt, leave audio filters disabled.</p>
+</div>
+<h3 id="validation">Validation<a class="headerlink" href="#validation" title="Permanent link">&para;</a></h3>
+<p>Before final encoding:
+- Use <strong>Preview</strong> to check audio/video sync
+- After encoding, play several scenes
+- Check for distortion
+- Verify channel mapping (stereo/5.1/7.1)
+- Ensure sync is perfect</p>
+<hr />
+<h2 id="5-subtitle-management">5. Subtitle Management<a class="headerlink" href="#5-subtitle-management" title="Permanent link">&para;</a></h2>
+<h3 id="embedded-subtitles">Embedded Subtitles<a class="headerlink" href="#embedded-subtitles" title="Permanent link">&para;</a></h3>
+<p>StaxRip automatically detects embedded subtitles:
+- SRT (text-based)
+- ASS/SSA (styled subtitles)
+- PGS (image-based Blu-ray subtitles)
+- VobSub (DVD)</p>
+<p>In the <strong>Subtitles</strong> tab, select which tracks to include, exclude, or convert (PGS → SRT via OCR). Disable unwanted commentary or duplicate language tracks.</p>
+<h3 id="external-subtitles">External Subtitles<a class="headerlink" href="#external-subtitles" title="Permanent link">&para;</a></h3>
+<p>Drag and drop <code>.srt</code>, <code>.ass</code>, or <code>.sub/.idx</code> files directly into StaxRip, or use <strong>Subtitles → Add Subtitle</strong>. External subtitles work identically to embedded ones.</p>
+<h3 id="subtitle-synchronization">Subtitle Synchronization<a class="headerlink" href="#subtitle-synchronization" title="Permanent link">&para;</a></h3>
+<p>Subtitle timing issues are common when using subtitles from different releases or mixing WEB-DL and Blu-ray sources.</p>
+<p><strong>Sync workflow:</strong>
+1. Preview video in <strong>StaxRip → Preview</strong>
+2. Check line timestamps against dialogue
+3. If out of sync, fix subtitles <em>before</em> encoding</p>
+<p><strong>Recommended tools:</strong>
+- <a href="../tools/#subtitle-edit">Subtitle Edit</a>
+- <a href="../tools/#aegisub">Aegisub</a> (for ASS styling)</p>
+<div class="admonition tip">
+<p class="admonition-title">Aegisub version guidance</p>
+<ul>
+<li><strong>Typesetters:</strong> Use the <strong><a href="https://github.com/arch1t3cht/Aegisub">arch1t3cht fork</a></strong>.</li>
+<li><strong>Non-typesetters (timing, basic edits, cleanup):</strong> Use <strong><a href="https://github.com/arch1t3cht/Aegisub/releases/tag/v3.4.0">Aegisub 3.4.0</a></strong>.</li>
+</ul>
+<p>See upstream bug report:<br />
+<a href="https://github.com/arch1t3cht/Aegisub/issues/177">arch1t3cht/Aegisub issue 177</a></p>
+</div>
+<p><strong>Typical fixes:</strong>
+- Apply global offset
+- Stretch/compress timings
+- Adjust scene-by-scene</p>
+<p>Re-import the corrected file into StaxRip after fixing.</p>
+<h3 id="multi-language-subtitles">Multi-Language Subtitles<a class="headerlink" href="#multi-language-subtitles" title="Permanent link">&para;</a></h3>
+<p>For releases targeting multiple audiences:
+- Select only relevant languages
+- Set correct language tags for each track
+- Mark the primary language as <strong>Default</strong></p>
+<p>Finalize language tags and flags in <a href="../tools/#mkvtoolnix">MKVToolNix</a> after encoding.</p>
+<h3 id="subtitle-styling-assssa">Subtitle Styling (ASS/SSA)<a class="headerlink" href="#subtitle-styling-assssa" title="Permanent link">&para;</a></h3>
+<p>Styled subtitles contain custom fonts, positioning, colors, margins, and sign translations (anime). Use <strong><a href="../tools/#aegisub">Aegisub</a></strong> for editing:</p>
+<ul>
+<li>Fix margin issues</li>
+<li>Adjust font sizes</li>
+<li>Correct line breaks</li>
+<li>Remove unwanted karaoke or effects</li>
+</ul>
+<p>Save and reload into StaxRip after editing.</p>
+<h3 id="validation_1">Validation<a class="headerlink" href="#validation_1" title="Permanent link">&para;</a></h3>
+<p>Before full encoding, do a short test:
+- Verify subtitles load correctly
+- Confirm sync
+- Test embedded fonts (ASS)
+- Check burn-in if using hard subtitles
+- Test playback in VLC, MPV, or Plex</p>
+<p>For soft subtitles, verify language tags, track order, default/forced flags, and test in multiple players.</p>
+<hr />
+<h2 id="6-aspect-ratio-corrections">6. Aspect Ratio Corrections<a class="headerlink" href="#6-aspect-ratio-corrections" title="Permanent link">&para;</a></h2>
+<p>Improper aspect ratio causes stretched or squished images, incorrect black bars, and player-dependent distortion. This section ensures your output displays correctly.</p>
+<h3 id="understanding-sar-dar-and-par">Understanding SAR, DAR, and PAR<a class="headerlink" href="#understanding-sar-dar-and-par" title="Permanent link">&para;</a></h3>
+<p><strong>SAR (Sample Aspect Ratio):</strong> The shape of each pixel in the source file. Most modern content uses square pixels (1:1), but DVDs, some WEB sources, and older TV content may have non-square pixels.</p>
+<p><strong>DAR (Display Aspect Ratio):</strong> The final aspect ratio the viewer sees. Common examples: 16:9 (1.78), 4:3 (1.33), cinematic formats (2.20, 2.35, 2.39, 2.40).</p>
+<p><strong>PAR (Pixel Aspect Ratio):</strong> A multiplier connecting SAR and DAR: <code>DAR = (Width / Height) × PAR</code></p>
+<p>If SAR is incorrect, DAR displays incorrectly.</p>
+<h3 id="when-corrections-are-needed">When Corrections Are Needed<a class="headerlink" href="#when-corrections-are-needed" title="Permanent link">&para;</a></h3>
+<p><strong>WEB sources:</strong> Some streaming services deliver content with incorrect or inconsistent SAR metadata.</p>
+<p><strong>DVD sources:</strong> Almost always require correction due to NTSC/PAL non-square pixels.</p>
+<p><strong>Some Blu-rays:</strong> Rarely, poorly mastered Blu-rays have 1-2px borders or incorrectly flagged DAR.</p>
+<p><strong>Anime releases:</strong> Occasionally need cropping due to edge artifacts or variable aspect ratio sequences.</p>
+<h3 id="fixing-aspect-ratio">Fixing Aspect Ratio<a class="headerlink" href="#fixing-aspect-ratio" title="Permanent link">&para;</a></h3>
+<p><strong>Step 1 - Inspect the source:</strong><br />
+Use the Preview window to check circles, faces, and straight lines. If circles appear oval, DAR is incorrect.</p>
+<p><strong>Step 2 - Apply corrections:</strong><br />
+In the <strong>Filters</strong> tab, use:
+- <strong>Resize filter:</strong> Corrects resolution to match intended DAR
+- <strong>Crop filter:</strong> Removes black borders and windowboxing</p>
+<p><strong>Examples:</strong></p>
+<p>Fixing incorrect SAR (DVD):
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Resize(720, 480).SetDAR(16:9)
+</code></pre></div></p>
+<p>Adjusting WEB-DL with stretched image:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>SetDAR(1.85)
+</code></pre></div></p>
+<h3 id="cropping-vs-scaling">Cropping vs. Scaling<a class="headerlink" href="#cropping-vs-scaling" title="Permanent link">&para;</a></h3>
+<p><strong>Cropping</strong> removes unwanted edges:
+- Black bars
+- Dirty pixels
+- Encoder artifacts
+- 1-2px letterbox noise</p>
+<p>Cropping rules:
+- YUV420 requires mod2 (crop by even numbers)
+- To crop 1px, convert to 4:4:4 or RGB (VapourSynth/AviSynth)
+- Avoid overcropping to prevent losing content</p>
+<p><strong>Scaling</strong> adjusts resolution to correct DAR:
+- Smooths slightly warped video
+- Matches official resolutions (1920×804, 1920×800, 3840×1608)</p>
+<p>Use scaling when:
+- DAR is off by a decimal (e.g., 2.39 → 2.40)
+- Content needs exact theatrical aspect ratio</p>
+<p><strong>Recommendation:</strong> Slight cropping removes artifacts cleanly without altering framing. Use scaling when the required correction is too large for cropping or you need pixel-perfect theatrical dimensions. Avoid excessive cropping and unnecessary upscaling.</p>
+<h3 id="verification">Verification<a class="headerlink" href="#verification" title="Permanent link">&para;</a></h3>
+<p>Before encoding:
+- Preview multiple shots
+- Compare against official screenshots when available
+- Export a short test encode
+- Check playback in MPV, VLC, Plex, and TV apps</p>
+<p>Look for:
+- Correct geometry (round objects should be round)
+- No visible distortion
+- No remaining border artifacts</p>
+<hr />
+<h2 id="7-filters-and-processing">7. Filters and Processing<a class="headerlink" href="#7-filters-and-processing" title="Permanent link">&para;</a></h2>
+<p>Filters clean, enhance, or adapt video for the best output. The goal is minimal modification unless the source requires it. A clean source needs fewer filters; noisy or banded sources need more.</p>
+<h3 id="filter-chain-overview">Filter Chain Overview<a class="headerlink" href="#filter-chain-overview" title="Permanent link">&para;</a></h3>
+<p>Open the <strong>Filters</strong> tab in StaxRip. Common filters include:</p>
+<table>
+<thead>
+<tr>
+<th>Filter</th>
+<th>Purpose</th>
+<th>When to Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Resize</strong></td>
+<td>Adjusts resolution</td>
+<td>Downscaling, DAR fixes</td>
+</tr>
+<tr>
+<td><strong>Crop</strong></td>
+<td>Removes borders, noise, windowboxing</td>
+<td>Black bars, dirty edges</td>
+</tr>
+<tr>
+<td><strong>Denoise</strong></td>
+<td>Reduces noise or grain</td>
+<td>Noisy WEB/TV sources</td>
+</tr>
+<tr>
+<td><strong>Deband</strong></td>
+<td>Smooths color gradients</td>
+<td>Visible banding in skies/gradients</td>
+</tr>
+<tr>
+<td><strong>Sharpen</strong></td>
+<td>Adds perceived detail</td>
+<td>After denoising/debanding</td>
+</tr>
+<tr>
+<td><strong>ColorMatrix</strong></td>
+<td>BT.601 ↔ BT.709, level fixes</td>
+<td>Wrong color matrix flags</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>How To</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Add filter</td>
+<td>Click <strong>[+]</strong> and choose from list</td>
+</tr>
+<tr>
+<td>Remove filter</td>
+<td>Click <strong>[x]</strong> next to a filter</td>
+</tr>
+<tr>
+<td>Edit filter</td>
+<td>Double-click a filter to adjust parameters</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cropping">Cropping<a class="headerlink" href="#cropping" title="Permanent link">&para;</a></h3>
+<p>Cropping removes black bars, encoder noise at edges, bad pixels, telecine borders, and letterboxing.</p>
+<p><strong>Auto-crop:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Crop → AutoCrop
+</code></pre></div></p>
+<p><strong>Manual cropping guidelines:</strong>
+- Use mod2 values for YUV420 (crop evenly)
+- Avoid cropping artistic content
+- Slight cropping (1-2px) acceptable for cleaning noisy edges
+- For 1px crops, use 4:4:4 intermediate script</p>
+<h3 id="resolution-adjustment">Resolution Adjustment<a class="headerlink" href="#resolution-adjustment" title="Permanent link">&para;</a></h3>
+<p>Resizing is used to:
+- Downscale (2160p → 1080p)
+- Conform to theatrical aspect ratios (1920×804, 1920×800, 3840×1608)
+- Smooth small DAR fixes that cropping alone can't handle</p>
+<p><strong>Setting resolution:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Filters → Resize → Set target resolution
+</code></pre></div></p>
+<p><strong>Best practices:</strong>
+- Maintain aspect ratio
+- Avoid unnecessary upscaling
+- Use high-quality scaling kernels: Spline36, Lanczos, or Bicubic with neutral parameters</p>
+<h3 id="denoising">Denoising<a class="headerlink" href="#denoising" title="Permanent link">&para;</a></h3>
+<p>Removes excessive noise or digital grain.</p>
+<div class="admonition warning">
+<p class="admonition-title">Over-denoising Destroys Texture</p>
+<p>Aggressive denoising produces plastic-looking results. Use sparingly.</p>
+</div>
+<p><strong>Common denoisers:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Denoiser</th>
+<th>Type</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>KNLMeansCL</strong></td>
+<td>GPU</td>
+<td>Fast, good quality</td>
+</tr>
+<tr>
+<td><strong>HQDN3D</strong></td>
+<td>CPU</td>
+<td>Lightweight, general purpose</td>
+</tr>
+<tr>
+<td><strong>BM3D</strong></td>
+<td>CPU</td>
+<td>Highest quality, very slow</td>
+</tr>
+<tr>
+<td><strong>FFT3DFilter</strong></td>
+<td>CPU</td>
+<td>Good for grain patterns</td>
+</tr>
+</tbody>
+</table>
+<p><strong>When to denoise:</strong>
+- TV/WEB sources with compression noise
+- Overly grainy sources
+- Low-light scenes</p>
+<div class="admonition note">
+<p class="admonition-title">When NOT to Denoise</p>
+<ul>
+<li>Blu-rays mastered with intentional grain</li>
+<li>High-quality cinematic content</li>
+<li>Anime with light noise patterns (risk of smearing)</li>
+</ul>
+</div>
+<h3 id="debanding">Debanding<a class="headerlink" href="#debanding" title="Permanent link">&para;</a></h3>
+<p>Banding appears in gradients (sky, smoke, fog, walls). If visible:
+- Apply a deband filter
+- Avoid overly strong settings (can blur detail)</p>
+<p><strong>Common filters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Filter</th>
+<th>Framework</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>f3kdb</strong></td>
+<td>AviSynth/VapourSynth</td>
+<td>Most popular, configurable</td>
+</tr>
+<tr>
+<td><strong>GradFun3</strong></td>
+<td>AviSynth</td>
+<td>Lightweight alternative</td>
+</tr>
+<tr>
+<td><strong>placebo.deband</strong></td>
+<td>VapourSynth</td>
+<td>Best quality, GPU-accelerated</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Starting values:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>f3kdb(range=15, grainy=16, grainc=16)
+</code></pre></div></p>
+<h3 id="sharpening">Sharpening<a class="headerlink" href="#sharpening" title="Permanent link">&para;</a></h3>
+<p>Restores lost texture after denoising or debanding. Use lightly to avoid halos or ringing.</p>
+<table>
+<thead>
+<tr>
+<th>Filter</th>
+<th>Type</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>LSFmod</strong></td>
+<td>AviSynth</td>
+<td>Configurable, popular</td>
+</tr>
+<tr>
+<td><strong>LSharpen</strong></td>
+<td>AviSynth</td>
+<td>Lightweight</td>
+</tr>
+<tr>
+<td><strong>CAS</strong></td>
+<td>Both</td>
+<td>AMD Contrast Adaptive Sharpening, natural results</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Sharpening Best Practice</p>
+<p>Apply sharpening as the last filter in the chain, after denoising and debanding. Start with low strength values and increase gradually.</p>
+</div>
+<h3 id="color-correction">Color Correction<a class="headerlink" href="#color-correction" title="Permanent link">&para;</a></h3>
+<p>Incorrect colors occur due to wrong matrix flags (BT.601 vs BT.709), WEB master issues, or improper conversions.</p>
+<p><strong>In StaxRip, use ColorMatrix:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>ColorMatrix(mode=&quot;Rec.601-&gt;Rec.709&quot;)
+</code></pre></div></p>
+<p><strong>Or apply:</strong>
+- Levels
+- Tweak (hue/saturation/brightness)
+- HDR → SDR conversions (best handled in VapourSynth)</p>
+<h3 id="preview-and-testing">Preview and Testing<a class="headerlink" href="#preview-and-testing" title="Permanent link">&para;</a></h3>
+<p>Always verify filter results:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>Preview → Scrub through timeline
+</code></pre></div></p>
+<p>Look for:
+- Overcropping
+- Artifacts
+- Crushed blacks/blown highlights
+- Broken gradients
+- Sharpening halos</p>
+<p>Before full encoding:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>Encode 30-60 seconds as a test
+</code></pre></div></p>
+<p>Verify filters behave correctly, aspect ratio is fixed, no unexpected artifacts, and bitrate/CRF matches expectations.</p>
+<h3 id="saving-presets">Saving Presets<a class="headerlink" href="#saving-presets" title="Permanent link">&para;</a></h3>
+<p>For frequently encoded similar sources:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Tools → Settings → Filters → Save as Preset
+</code></pre></div></p>
+<p>Examples: Anime preset, live-action WEB-DL preset, HDR→SDR preset, DVD restoration preset.</p>
+<hr />
+<h2 id="8-encoding-and-output">8. Encoding and Output<a class="headerlink" href="#8-encoding-and-output" title="Permanent link">&para;</a></h2>
+<h3 id="save-your-project">Save Your Project<a class="headerlink" href="#save-your-project" title="Permanent link">&para;</a></h3>
+<p>Before encoding:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>File → Save Project As…
+</code></pre></div></p>
+<p>This lets you reuse settings, quickly fix issues without rebuilding, and efficiently batch encode similar content. Use descriptive names like <code>MovieName_1080p_x264_Project.srip</code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Always Save Before Encoding</p>
+<p>If encoding fails or you need to adjust settings, a saved project lets you resume without reconfiguring everything from scratch.</p>
+</div>
+<h3 id="review-the-queue">Review the Queue<a class="headerlink" href="#review-the-queue" title="Permanent link">&para;</a></h3>
+<p>StaxRip supports batch encoding. Check the <strong>Jobs</strong> window:
+- Is your main job listed?
+- Are all jobs configured correctly?</p>
+<p><strong>Add multiple files:</strong> Configure → Add to Queue<br />
+<strong>View queue:</strong> Jobs → Show Jobs</p>
+<h3 id="start-encoding">Start Encoding<a class="headerlink" href="#start-encoding" title="Permanent link">&para;</a></h3>
+<p>Click <strong>Start</strong>. StaxRip displays:
+- Real-time encoding log
+- Estimated time
+- Encoding speed (fps)
+- x264/x265 CLI output</p>
+<p>Monitor for warnings or errors. Red text or stopped encodes require log review.</p>
+<h3 id="system-performance">System Performance<a class="headerlink" href="#system-performance" title="Permanent link">&para;</a></h3>
+<p>Encoding is CPU-heavy and may use GPU resources depending on filters.</p>
+<p><strong>During encoding:</strong>
+- Close unnecessary programs
+- Avoid gaming or heavy multitasking
+- Ensure good airflow and temperatures
+- Monitor Task Manager for CPU/GPU/RAM usage</p>
+<p><strong>If StaxRip slows your system:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>Task Manager → Details → staxrip.exe → Set Priority → Below Normal
+</code></pre></div></p>
+<h3 id="encoding-time">Encoding Time<a class="headerlink" href="#encoding-time" title="Permanent link">&para;</a></h3>
+<p>Time varies based on source (resolution, noise, motion complexity), settings (CRF vs 2-pass, preset, filters), and hardware (CPU model, RAM speed, SSD vs HDD).</p>
+<p><strong>Example estimates for 2-hour 1080p encode:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Preset</th>
+<th>Time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Medium</td>
+<td>45-90 min</td>
+</tr>
+<tr>
+<td>Slow</td>
+<td>2-5 hours</td>
+</tr>
+<tr>
+<td>Slower</td>
+<td>6-10 hours</td>
+</tr>
+<tr>
+<td>Placebo</td>
+<td>12-48 hours</td>
+</tr>
+</tbody>
+</table>
+<h3 id="final-muxing">Final Muxing<a class="headerlink" href="#final-muxing" title="Permanent link">&para;</a></h3>
+<div class="admonition success">
+<p class="admonition-title">Recommended: Use MKVToolNix for Final Muxing</p>
+<p>Do NOT mux in StaxRip. External muxing with <a href="../tools/#mkvtoolnix">MKVToolNix</a> provides:</p>
+<ul>
+<li>Manual verification of all elements</li>
+<li>Precise control over metadata</li>
+<li>Proper flags, languages, and ordering</li>
+<li>Cleaner, more professional files</li>
+<li>Easier debugging</li>
+</ul>
+</div>
+<p><strong>Workflow:</strong>
+1. Encode video only in StaxRip
+2. Open <a href="../tools/#mkvtoolnix">MKVToolNix</a> GUI
+3. Add encoded video, audio tracks, subtitle tracks, and chapters
+4. Set flags (default, forced, language tags)
+5. Click <strong>Start Muxing</strong></p>
+<p>Test the final result in MPC-HC, mpv, or VLC.</p>
+<h3 id="error-handling">Error Handling<a class="headerlink" href="#error-handling" title="Permanent link">&para;</a></h3>
+<p>If encoding fails:</p>
+<table>
+<thead>
+<tr>
+<th>Issue</th>
+<th>Cause</th>
+<th>Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Missing filters</td>
+<td>Plugin not installed</td>
+<td>Check StaxRip dependencies</td>
+</tr>
+<tr>
+<td>Incorrect color formats</td>
+<td>Wrong input/output format</td>
+<td>Verify source color space</td>
+</tr>
+<tr>
+<td>Unsupported audio/subtitle</td>
+<td>Format incompatibility</td>
+<td>Convert or passthrough</td>
+</tr>
+<tr>
+<td>Invalid crop/resize</td>
+<td>Odd numbers in 4:2:0</td>
+<td>Use mod2 values</td>
+</tr>
+<tr>
+<td>DGDecNV errors</td>
+<td>GPU/license issues</td>
+<td>Check NVIDIA driver, license</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Debugging Strategy</p>
+<p>Test a 10-second clip to isolate issues before attempting a full encode.</p>
+</div>
+<p>If the script breaks:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>Video → Script → Edit Script
+</code></pre></div></p>
+<p>Check for incorrect function names, wrong paths, or missing plugins.</p>
+<h3 id="save-templates">Save Templates<a class="headerlink" href="#save-templates" title="Permanent link">&para;</a></h3>
+<p>To reuse encoding setups:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>Tools → Settings → Templates → Save as Template
+</code></pre></div></p>
+<table>
+<thead>
+<tr>
+<th>Template</th>
+<th>Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x264 1080p live-action</td>
+<td>Standard movie/TV encodes</td>
+</tr>
+<tr>
+<td>x264 Anime</td>
+<td>Animation with adjusted psy-rd</td>
+</tr>
+<tr>
+<td>x265 4K HDR</td>
+<td>UHD HDR content</td>
+</tr>
+<tr>
+<td>x265 SDR conversion</td>
+<td>HDR to SDR workflow</td>
+</tr>
+<tr>
+<td>DVD restoration</td>
+<td>Upscaling and cleanup</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="appendix-a-dgdecnv-setup-advanced">Appendix A: DGDecNV Setup (Advanced)<a class="headerlink" href="#appendix-a-dgdecnv-setup-advanced" title="Permanent link">&para;</a></h2>
+<p>DGDecNV is an advanced toolset for NVIDIA GPU users that improves decoding and indexing performance for supported video formats.</p>
+<h3 id="what-is-dgdecnv">What is DGDecNV?<a class="headerlink" href="#what-is-dgdecnv" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>DGSource</strong></td>
+<td>High-performance video source filter for VapourSynth and AviSynth</td>
+</tr>
+<tr>
+<td><strong>DGIndexNV</strong></td>
+<td>Creates <code>.dgi</code> index files for StaxRip</td>
+</tr>
+</tbody>
+</table>
+<p>➡️ <a href="https://www.rationalqm.us/dgdecnv/dgdecnv.html">https://www.rationalqm.us/dgdecnv/dgdecnv.html</a></p>
+<h3 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Requirement</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>NVIDIA GPU</strong></td>
+<td>Supported model with NVDEC</td>
+</tr>
+<tr>
+<td><strong>License</strong></td>
+<td>Hardware-locked key (purchase required)</td>
+</tr>
+<tr>
+<td><strong>Formats</strong></td>
+<td>H.264, HEVC, MPEG-2 only</td>
+</tr>
+</tbody>
+</table>
+<h3 id="installation_1">Installation<a class="headerlink" href="#installation_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Download DGDecNV from the website (license purchase required)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Place DGIndexNV.exe and associated files in a folder</td>
+</tr>
+<tr>
+<td>3</td>
+<td>In StaxRip: <strong>Tools → Settings → Apps → DGIndexNV → Set path</strong></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Set default: <strong>Tools → Settings → Preprocessing → DGSource as default</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="verification_1">Verification<a class="headerlink" href="#verification_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Expected Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Load compatible file</td>
+<td>File loads without errors</td>
+</tr>
+<tr>
+<td>Filters tab</td>
+<td>DGSource appears as source filter</td>
+</tr>
+<tr>
+<td>Indexing</td>
+<td><code>.dgi</code> file created successfully</td>
+</tr>
+</tbody>
+</table>
+<h3 id="caveats">Caveats<a class="headerlink" href="#caveats" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Limitation</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Format support</td>
+<td>H.264, HEVC, MPEG-2 only</td>
+</tr>
+<tr>
+<td>Hardware</td>
+<td>Requires supported NVIDIA GPU</td>
+</tr>
+<tr>
+<td>Licensing</td>
+<td>Hardware-locked keys</td>
+</tr>
+<tr>
+<td>Updates</td>
+<td>May require reconfiguration</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Advanced Users Only</p>
+<p>Most users don't need DGDecNV. Only consider if you have an NVIDIA GPU and regularly encode H.264/HEVC content where indexing performance is a bottleneck.</p>
+</div>
+<hr />
+<h2 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../introduction-encode/">Encoding Introduction</a> – Overview of the encoding guide series</li>
+<li><a href="../source-encode/">Sourcing Content</a> – Finding and verifying quality sources</li>
+<li><a href="../DV-encode/">Dolby Vision</a> – HDR and Dolby Vision encoding workflows</li>
+<li><a href="../comp/">Comparison Guide</a> – Evaluate source quality before encoding</li>
+<li><a href="https://okami.icu/tools/">Tools &amp; Software</a> – Additional encoding tools and utilities</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../introduction-encode/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Introduction">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Introduction
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../source-encode/" class="md-footer__link md-footer__link--next" aria-label="Next: Sourcing and Verifying Content">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Sourcing and Verifying Content
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy", "navigation.tracking", "navigation.footer", "search.suggest", "search.highlight", "content.image.zoom"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../assets/custom.js"></script>
+      
+    
+  </body>
+</html>
